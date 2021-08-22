@@ -1,0 +1,121 @@
+:root {
+  /* palet color your save art ref:https://color.adobe.com/pt/yas-color-color-theme-17439921 */
+  --yas_color1: #e6e0de;
+  --yas_color2: #fa8589;
+  --yas_color3: #c8ffca;
+  --yas_color4: #204b3d;
+  --yas_color5: #101210;
+  --yas_color6: #eccc4f;
+
+  /* adicionais color */
+  --yas_color5_gradient: linear-gradient(180.12deg, rgba(16, 18, 16, 0.459) 0.1%, #101210 65.07%);
+  --yas_color1_opacity: rgba(231, 225, 223, 0.939);
+
+  /* alarme color */
+  --yas_color_error: #fa8589;
+  --yas_color_success: #204b3d;
+  --yas_color_warning: #eccc4f;
+}
+
+.yas_color1{
+  color: var(--yas_color1);
+}
+/* botton */
+button.btn-primary {
+  background-color: var(--yas_color2);
+  border: 0;
+  color: var(--yas_color5);
+  border-radius: 20px;
+
+}
+
+button.btn-primary:hover {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+
+}
+
+button.btn-primary:link {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+
+}
+
+button.btn-primary:visited {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+
+}
+
+button.btn-primary:active {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+
+}
+
+button.btn-success {
+  background-color: var(--yas_color4);
+  border: 0;
+  color: var(--yas_color1);
+  border-radius: 20px;
+
+}
+
+button.btn-success:hover {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+}
+
+button.btn-success:link {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+}
+
+button.btn-success:visited {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+}
+
+button.btn-success:active {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+}
+
+
+button.btn-light {
+  background-color: var(--yas_color1);
+  border: 0;
+  border-radius: 20px;
+}
+
+button.btn-light:hover {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+}
+
+button.btn-light:link {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+}
+
+button.btn-light:visited {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+}
+
+button.btn-light:active {
+  border: 0;
+  background-color: var(--yas_color3);
+  color: var(--yas_color5);
+}

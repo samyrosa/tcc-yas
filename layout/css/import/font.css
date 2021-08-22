@@ -1,0 +1,45 @@
+/* fonte google: Montserrat ref:https://fonts.google.com/specimen/Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap');
+
+:root {
+    --yas_font_type: 'Montserrat', sans-serif;
+    --yas_font_ligth: 300;
+    --yas_font_regular: 400;
+    --yas_font_medium: 500;
+    --yas_font_bold: 700;
+    --yas_font_extra-bold: 800;
+}
+
+.yas_font_ligth {
+    font-family: var(--yas_font_type);
+    font-weight: var(--yas_font_ligth);
+}
+
+.yas_font_regular {
+    font-family: var(--yas_font_type);
+    font-weight: var(--yas_font_regular);
+}
+
+.yas_font_medium {
+    font-family: var(--yas_font_type);
+    font-weight: var(--yas_font_medium);
+}
+
+.yas_font_bold {
+    font-family: var(--yas_font_type);
+    font-weight: var(--yas_font_bold);
+}
+h1.yas_font_bold{
+    font-size: 50px;
+}
+
+yas_font_big{
+    font-size: 76px;
+}
+yas_font_medium{
+    font-size: 60px;
+}
+.yas_font_extra-bold {
+    font-family: var(--yas_font_type);
+    font-weight: var(--yas_font_extra-bold);
+}
