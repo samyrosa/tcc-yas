@@ -32,7 +32,7 @@
       }
       else{
         if(!isset($_POST['nome'])){
-          require "includes/forms/user-cadastro-form.php";
+          require "includes/forms/user-cadastro-form.html";
       }else{
         $nome= $_POST['nome'] ?? null;
         $sobrenome= $_POST['sobrenome'] ?? null;

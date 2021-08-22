@@ -31,7 +31,7 @@
       }
       else{
         if(!isset($_POST['email'])){
-          require "includes/forms/user-login-form.php";
+          require "includes/forms/user-login-form.html";
       }else{
           $email=$_POST['email'];
           $senha=$_POST['senha'];
