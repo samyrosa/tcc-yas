@@ -90,7 +90,7 @@ insert into tag_proj (tag_name) values
 ('Design de moda'),
 ('Design de móveis'),
 ('Design de jogos'),
-('Design gráfico'),
+('Design gráfico'), 
 ('Design de ícones'),
 ('Design de interações'),
 ('Design de interiores'),

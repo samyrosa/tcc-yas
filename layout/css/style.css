@@ -1,5 +1,6 @@
 @import url(import/color.css);
 @import url(import/font.css);
+@import url(import/carousel.css);
 
 body {
   color: var(--yas_color5);
@@ -220,4 +221,8 @@ input[type="submit"]::-moz-focus-inner {
 
 div.yas_card{
   width: 200px !important;
+}
+
+.yas_radius{
+  border-radius: 20px !important;
 }
