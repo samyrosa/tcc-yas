@@ -14,6 +14,42 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <style>
+        @media (max-width: 767px) {
+            .carousel-inner .carousel-item>div {
+                display: none;
+            }
+
+            .carousel-inner .carousel-item>div:first-child {
+                display: block;
+            }
+        }
+
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+
+        /* medium and up screens */
+        @media (min-width: 768px) {
+
+            .carousel-inner .carousel-item-end.active,
+            .carousel-inner .carousel-item-next {
+                transform: translateX(25%);
+            }
+
+            .carousel-inner .carousel-item-start.active,
+            .carousel-inner .carousel-item-prev {
+                transform: translateX(-25%);
+            }
+        }
+
+        .carousel-inner .carousel-item-end,
+        .carousel-inner .carousel-item-start {
+            transform: translateX(0);
+        }
+    </style>
 </head>
 
 <body>
@@ -109,7 +145,6 @@
             </div>
             <div class="col mx-2">
                 <div class="container text-center my-3">
-                    <h2 class="font-weight-light">Bootstrap Multi Slide Carousel</h2>
                     <div class="row mx-auto my-auto justify-content-center">
                         <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner" role="listbox">
@@ -182,7 +217,6 @@
                             </a>
                         </div>
                     </div>
-                    <h5 class="mt-2 fw-light">advances one slide at a time</h5>
                 </div>
             </div>
         </div>

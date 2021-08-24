@@ -1,6 +1,5 @@
 @import url(import/color.css);
 @import url(import/font.css);
-@import url(import/carousel.css);
 
 body {
   color: var(--yas_color5);
