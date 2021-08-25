@@ -57,10 +57,10 @@ $cond = $_GET['cond'] ?? null;
 
   <div class="container mt-5 ">
     <div class="row">
-      <div class="col-12 border-bottom border-2">
+      <div class="col-12 border-bottom border-2 pb-2">
         <div class="row">
-          <div class="col-6 ">
-            <h5 class="yas_font_ligth text-uppercase ">RESULTADO PARA: <?php echo $pesquisa ?></h5>
+          <div class="col-6 mt-2">
+            <h5 class="yas_font_ligth text-uppercase mb-0">RESULTADO PARA: <?php echo $pesquisa ?></h5>
           </div>
           <div class="col-6  text-end">
             <button onclick="window.location.href = 'search.php?pesquisa=<?php echo $pesquisa ?>&cond=projeto'" type='button' class='btn btn-primary btn-sm  me-2 px-3'>Projeto</button>
