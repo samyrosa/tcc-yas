@@ -14,42 +14,6 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <style>
-        @media (max-width: 767px) {
-            .carousel-inner .carousel-item>div {
-                display: none;
-            }
-
-            .carousel-inner .carousel-item>div:first-child {
-                display: block;
-            }
-        }
-
-        .carousel-inner .carousel-item.active,
-        .carousel-inner .carousel-item-next,
-        .carousel-inner .carousel-item-prev {
-            display: flex;
-        }
-
-        /* medium and up screens */
-        @media (min-width: 768px) {
-
-            .carousel-inner .carousel-item-end.active,
-            .carousel-inner .carousel-item-next {
-                transform: translateX(25%);
-            }
-
-            .carousel-inner .carousel-item-start.active,
-            .carousel-inner .carousel-item-prev {
-                transform: translateX(-25%);
-            }
-        }
-
-        .carousel-inner .carousel-item-end,
-        .carousel-inner .carousel-item-start {
-            transform: translateX(0);
-        }
-    </style>
 </head>
 
 <body>
@@ -77,14 +41,23 @@
                     <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">CATEGORIAS PRINCIPAIS</h5>
                 </a>
             </div>
-            <div class="col mx-2">
-                <button type="button" class="btn btn-primary btn-lg me-1">Large button</button>
-                <button type="button" class="btn btn-primary btn-lg me-1">Large button</button>
-                <button type="button" class="btn btn-primary btn-lg me-1">Large button</button>
-                <button type="button" class="btn btn-primary btn-lg me-1">Large button</button>
-                <button type="button" class="btn btn-primary btn-lg me-1">Large button</button>
-                <button type="button" class="btn btn-primary btn-lg me-1">Large button</button>
-                <button type="button" class="btn btn-primary btn-lg me-1">Large button</button>
+            <div class="col mx-2 text-center">
+                <?php
+                $busca = $banco->query("SELECT * FROM `tag_proj` ORDER BY RAND() LIMIT 5");
+                if (!$busca) {
+                    echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                } else {
+                    if ($busca->num_rows > 0) {
+                        while ($reg_tag = $busca->fetch_object()) {
+                ?>
+                            <button type='button' onclick="window.location.href = 'tag.php?cod=<?php echo $reg_tag->tag_id ?>'" class='btn btn-primary btn-lg me-2 shadow '><?php echo $reg_tag->tag_name ?></button>
+                <?php
+                        }
+                    } else {
+                        echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    }
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -95,43 +68,30 @@
                 <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">ALGUNS ARTISTAS</h5>
             </a>
         </div>
-        <div class='row row-cols-1 row-cols-md-5 g-4'>
-            <div class="card mx-4 yas_radius " style='background-color: var(--yas_color1)'>
-                <img src="layout/image/user-yas.png" width='100' height='100' class=" img-fluid rounded-circle text-center mx-auto mt-3" alt="...">
-                <div class='card-body'>
-                    <a href='user-cadastro.php' class='link-dark'>
-                        <h5 class='card-title mt-2 mb-0 name text-center'>samuel rosa</h5>
-                    </a>
-                    <p class='card-text'><small class='text-muted text-uppercase text-center'>$reg->user_carreira</small></p>
-                </div>
+        <div class='row row-cols-1 row-cols-md-5 g-4 mx-4'>
+            <?php
+            $busca = $banco->query("SELECT * FROM `user_yas` ORDER BY RAND() LIMIT 4");
+            if (!$busca) {
+                echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+            } else {
+                if ($busca->num_rows > 0) {
+                    while ($reg_user = $busca->fetch_object()) {
+                        $perfil = img_perfil($reg_user->user_foto);
+                        echo "<div class='card mx-4 yas_radius shadow' style='background-color: var(--yas_color1)'>
+            <img src='$perfil' width='100' height='100' class=' img-fluid rounded-circle text-center mx-auto mt-3' alt='...'>
+            <div class='card-body'>
+                <a href='user-cadastro.php' class='link-dark'>
+                    <h5 class='card-title mt-2 mb-0 name text-center'>$reg_user->user_first_name $reg_user->user_last_name</h5>
+                </a>
+                <p class=' text-center card-text'><small class='text-muted text-uppercase'>$reg_user->user_carreira</small></p>
             </div>
-            <div class="card mx-4 yas_radius " style='background-color: var(--yas_color1)'>
-                <img src="layout/image/user-yas.png" width='100' height='100' class=" img-fluid rounded-circle text-center mx-auto mt-3" alt="...">
-                <div class='card-body'>
-                    <a href='user-cadastro.php' class='link-dark'>
-                        <h5 class='card-title mt-2 mb-0 name text-center'>samuel rosa</h5>
-                    </a>
-                    <p class='card-text'><small class='text-muted text-uppercase text-center'>$reg->user_carreira</small></p>
-                </div>
-            </div>
-            <div class="card mx-4 yas_radius " style='background-color: var(--yas_color1)'>
-                <img src="layout/image/user-yas.png" width='100' height='100' class=" img-fluid rounded-circle text-center mx-auto mt-3" alt="...">
-                <div class='card-body'>
-                    <a href='user-cadastro.php' class='link-dark'>
-                        <h5 class='card-title mt-2 mb-0 name text-center'>samuel rosa</h5>
-                    </a>
-                    <p class='card-text'><small class='text-muted text-uppercase text-center'>$reg->user_carreira</small></p>
-                </div>
-            </div>
-            <div class="card mx-4 yas_radius " style='background-color: var(--yas_color1)'>
-                <img src="layout/image/user-yas.png" width='100' height='100' class=" img-fluid rounded-circle text-center mx-auto mt-3" alt="...">
-                <div class='card-body'>
-                    <a href='user-cadastro.php' class='link-dark'>
-                        <h5 class='card-title mt-2 mb-0 name text-center'>samuel rosa</h5>
-                    </a>
-                    <p class='card-text'><small class='text-muted text-uppercase text-center'>$reg->user_carreira</small></p>
-                </div>
-            </div>
+        </div>";
+                    }
+                } else {
+                    echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                }
+            }
+            ?>
 
         </div>
     </div>
@@ -143,83 +103,121 @@
                     <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">CATEGORIAS PRINCIPAIS</h5>
                 </a>
             </div>
-            <div class="col mx-2">
-                <div class="container text-center my-3">
-                    <div class="row mx-auto my-auto justify-content-center">
-                        <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="carousel-item active">
-                                    <div class="col-md-3">
-                                        <div class="card">
-                                            <div class="card-img">
-                                                <img src="//via.placeholder.com/500x400/31f?text=1" class="img-fluid">
-                                            </div>
-                                            <div class="card-img-overlay">Slide 1</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-md-3">
-                                        <div class="card">
-                                            <div class="card-img">
-                                                <img src="//via.placeholder.com/500x400/e66?text=2" class="img-fluid">
-                                            </div>
-                                            <div class="card-img-overlay">Slide 2</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-md-3">
-                                        <div class="card">
-                                            <div class="card-img">
-                                                <img src="//via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
-                                            </div>
-                                            <div class="card-img-overlay">Slide 3</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-md-3">
-                                        <div class="card">
-                                            <div class="card-img">
-                                                <img src="//via.placeholder.com/500x400?text=4" class="img-fluid">
-                                            </div>
-                                            <div class="card-img-overlay">Slide 4</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-md-3">
-                                        <div class="card">
-                                            <div class="card-img">
-                                                <img src="//via.placeholder.com/500x400/aba?text=5" class="img-fluid">
-                                            </div>
-                                            <div class="card-img-overlay">Slide 5</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="col-md-3">
-                                        <div class="card">
-                                            <div class="card-img">
-                                                <img src="//via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
-                                            </div>
-                                            <div class="card-img-overlay">Slide 6</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            </a>
-                            <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            </a>
-                        </div>
-                    </div>
+        </div>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
+                    <?php
+                    $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
+                    if (!$busca) {
+                        echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    } else {
+                        if ($busca->num_rows > 0) {
+                            while ($reg = $busca->fetch_object()) {
+                                $bg = bg_proj($reg->proj_back_img);
+              $perfil = img_perfil($reg->user_foto);
+              $datatime = new DateTime($reg->proj_data);
+              $data = $datatime->format("d / m / y",);
+                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+            <div class='col'>
+              <div class='card position-relative'>
+                <img src='$bg' height='250' class='card-img'>
+                <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
+                  $data
+                  <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
+                  <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
+                  <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                </div>
+              </div>
+            </div>
+          </a>";
+                            }
+                        } else {
+                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
+                <?php
+                    $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
+                    if (!$busca) {
+                        echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    } else {
+                        if ($busca->num_rows > 0) {
+                            while ($reg = $busca->fetch_object()) {
+                                $bg = bg_proj($reg->proj_back_img);
+              $perfil = img_perfil($reg->user_foto);
+              $datatime = new DateTime($reg->proj_data);
+              $data = $datatime->format("d / m / y",);
+                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+            <div class='col'>
+              <div class='card position-relative'>
+                <img src='$bg' height='250' class='card-img'>
+                <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
+                  $data
+                  <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
+                  <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
+                  <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                </div>
+              </div>
+            </div>
+          </a>";
+                            }
+                        } else {
+                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
+                <?php
+                    $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
+                    if (!$busca) {
+                        echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    } else {
+                        if ($busca->num_rows > 0) {
+                            while ($reg = $busca->fetch_object()) {
+                                $bg = bg_proj($reg->proj_back_img);
+              $perfil = img_perfil($reg->user_foto);
+              $datatime = new DateTime($reg->proj_data);
+              $data = $datatime->format("d / m / y",);
+                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+            <div class='col'>
+              <div class='card position-relative'>
+                <img src='$bg' height='250' class='card-img'>
+                <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
+                  $data
+                  <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
+                  <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
+                  <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                </div>
+              </div>
+            </div>
+          </a>";
+                            }
+                        } else {
+                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            <span class="visually-hidden ">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
 
