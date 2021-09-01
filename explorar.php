@@ -220,6 +220,254 @@
         </button>
     </div>
 
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="" class="link-dark">
+                    <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">CATEGORIAS PRINCIPAIS</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="carrocel2" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
+                    <?php
+                    $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
+                    if (!$busca) {
+                        echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    } else {
+                        if ($busca->num_rows > 0) {
+                            while ($reg = $busca->fetch_object()) {
+                                $bg = bg_proj($reg->proj_back_img);
+              $perfil = img_perfil($reg->user_foto);
+              $datatime = new DateTime($reg->proj_data);
+              $data = $datatime->format("d / m / y",);
+                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+            <div class='col'>
+              <div class='card position-relative'>
+                <img src='$bg' height='250' class='card-img'>
+                <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
+                  $data
+                  <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
+                  <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
+                  <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                </div>
+              </div>
+            </div>
+          </a>";
+                            }
+                        } else {
+                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
+                <?php
+                    $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
+                    if (!$busca) {
+                        echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    } else {
+                        if ($busca->num_rows > 0) {
+                            while ($reg = $busca->fetch_object()) {
+                                $bg = bg_proj($reg->proj_back_img);
+              $perfil = img_perfil($reg->user_foto);
+              $datatime = new DateTime($reg->proj_data);
+              $data = $datatime->format("d / m / y",);
+                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+            <div class='col'>
+              <div class='card position-relative'>
+                <img src='$bg' height='250' class='card-img'>
+                <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
+                  $data
+                  <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
+                  <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
+                  <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                </div>
+              </div>
+            </div>
+          </a>";
+                            }
+                        } else {
+                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
+                <?php
+                    $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
+                    if (!$busca) {
+                        echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    } else {
+                        if ($busca->num_rows > 0) {
+                            while ($reg = $busca->fetch_object()) {
+                                $bg = bg_proj($reg->proj_back_img);
+              $perfil = img_perfil($reg->user_foto);
+              $datatime = new DateTime($reg->proj_data);
+              $data = $datatime->format("d / m / y",);
+                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+            <div class='col'>
+              <div class='card position-relative'>
+                <img src='$bg' height='250' class='card-img'>
+                <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
+                  $data
+                  <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
+                  <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
+                  <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                </div>
+              </div>
+            </div>
+          </a>";
+                            }
+                        } else {
+                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carrocel2" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            <span class="visually-hidden ">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrocel2" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <a href="" class="link-dark">
+                    <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">CATEGORIAS PRINCIPAIS</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="carrocel3" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
+                    <?php
+                    $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
+                    if (!$busca) {
+                        echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    } else {
+                        if ($busca->num_rows > 0) {
+                            while ($reg = $busca->fetch_object()) {
+                                $bg = bg_proj($reg->proj_back_img);
+              $perfil = img_perfil($reg->user_foto);
+              $datatime = new DateTime($reg->proj_data);
+              $data = $datatime->format("d / m / y",);
+                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+            <div class='col'>
+              <div class='card position-relative'>
+                <img src='$bg' height='250' class='card-img'>
+                <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
+                  $data
+                  <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
+                  <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
+                  <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                </div>
+              </div>
+            </div>
+          </a>";
+                            }
+                        } else {
+                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
+                <?php
+                    $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
+                    if (!$busca) {
+                        echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    } else {
+                        if ($busca->num_rows > 0) {
+                            while ($reg = $busca->fetch_object()) {
+                                $bg = bg_proj($reg->proj_back_img);
+              $perfil = img_perfil($reg->user_foto);
+              $datatime = new DateTime($reg->proj_data);
+              $data = $datatime->format("d / m / y",);
+                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+            <div class='col'>
+              <div class='card position-relative'>
+                <img src='$bg' height='250' class='card-img'>
+                <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
+                  $data
+                  <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
+                  <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
+                  <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                </div>
+              </div>
+            </div>
+          </a>";
+                            }
+                        } else {
+                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
+                <?php
+                    $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
+                    if (!$busca) {
+                        echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                    } else {
+                        if ($busca->num_rows > 0) {
+                            while ($reg = $busca->fetch_object()) {
+                                $bg = bg_proj($reg->proj_back_img);
+              $perfil = img_perfil($reg->user_foto);
+              $datatime = new DateTime($reg->proj_data);
+              $data = $datatime->format("d / m / y",);
+                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+            <div class='col'>
+              <div class='card position-relative'>
+                <img src='$bg' height='250' class='card-img'>
+                <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
+                  $data
+                  <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
+                  <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
+                  <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                </div>
+              </div>
+            </div>
+          </a>";
+                            }
+                        } else {
+                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carrocel3" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            <span class="visually-hidden ">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrocel3" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
 
     <?php
     require "includes/footer.php"
