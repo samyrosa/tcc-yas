@@ -226,3 +226,41 @@ div.yas_card{
 .yas_radius{
   border-radius: 20px !important;
 }
+
+/* a ref */
+a[href^="mailto"]::before {
+  font-family: bootstrap-icons !important;
+  content: "\f32c  ";
+  vertical-align: -.165em;
+  font-size: 20px;
+} 
+a[href^="https://api.whatsapp.com/"]::before {
+  font-family: bootstrap-icons !important;
+  content: "\f618  ";
+  vertical-align: -.165em;
+  font-size: 20px;
+} 
+a[href^="tel"]::before {
+  font-family: bootstrap-icons !important;
+  content: "\f5b4  ";
+  vertical-align: -.165em;
+  font-size: 20px;
+} 
+a[href^="https://www.instagram.com"]::before {
+  font-family: bootstrap-icons !important;
+  content: "\f437  ";
+  vertical-align: -.165em;
+  font-size: 20px;
+} 
+a[href^="https://twitter.com/"]::before {
+  font-family: bootstrap-icons !important;
+  content: "\f5ef  ";
+  vertical-align: -.165em;
+  font-size: 20px;
+} 
+a.link_save[href^="https"]::before {
+  font-family: bootstrap-icons !important;
+  content: "\f470  ";
+  vertical-align: -.165em;
+  font-size: 20px;
+} 
