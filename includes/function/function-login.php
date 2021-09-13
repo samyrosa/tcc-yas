@@ -21,4 +21,13 @@
         }
     }
 
+    function is_user(){
+        if($_SESSION['id']=== $_GET['cod']){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
 ?>

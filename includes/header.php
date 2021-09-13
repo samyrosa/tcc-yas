@@ -13,7 +13,7 @@
           
             if(is_logado()){
               $id=$_SESSION['id'];
-              $sql="SELECT user_foto, user_first_name, user_last_name, user_email FROM user_yas WHERE user_id= $id ";
+              $sql="SELECT user_id, user_foto, user_first_name, user_last_name, user_email FROM user_yas WHERE user_id= $id ";
               $busca = $banco->query("$sql");
               $reg = $busca -> fetch_object();
               $img_perfil= img_perfil($reg->user_foto);
@@ -26,9 +26,9 @@
                   <li> <span class='dropdown-item-text text-center'><h4 class='name'>$reg->user_first_name $reg->user_last_name </h4></span> </li>
                   <li><span class='dropdown-item-text text-muted text-center email'>$reg->user_email</span></li>
                   <li><hr class='dropdown-divider'></li>
-                  <li><a class='dropdown-item' href='user-perfil.php'><i class='bi bi-person-circle'> </i>Perfil</a></li>
-                  <li><a class='dropdown-item' href='user-perfil.php?mod=salvos'><i class='bi bi-bookmark'> </i>Salvos</a></li>
-                  <li><a class='dropdown-item' href='user-perfil.php?mod=insp'><i class='bi bi-star'> </i>Inspirações</a></li>
+                  <li><a class='dropdown-item' href='user-perfil.php?cod=$reg->user_id'><i class='bi bi-person-circle'> </i>Perfil</a></li>
+                  <li><a class='dropdown-item' href='user-perfil.php?cod=$reg->user_id&mod=salvos'><i class='bi bi-bookmark'> </i>Salvos</a></li>
+                  <li><a class='dropdown-item' href='user-perfil.php?cod=$reg->user_id&mod=insp'><i class='bi bi-star'> </i>Inspirações</a></li>
                   "
                   ?><br>
       <li class="text-center"><button onclick="window.location.href = 'user-logof.php'" type='button'
