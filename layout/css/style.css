@@ -39,9 +39,10 @@ label {
   padding-top: 10px;
 }
 
-input.form-control {
+input.form-control, textarea.form-control, select.form-select{
   border-radius: 20px;
 }
+
 
 /* msg modal */
 .yas_msg_erro {
