@@ -66,22 +66,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class='row row-cols-1 row-cols-md-2 g-3 mt-1'>
-                        <a href='view-proj.php?cod=$reg->proj_id'>
-                            <div class='col'>
-                                <div class='card position-relative'>
-                                    <img src='$bg' height='250' class='card-img'>
-                                    <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>
-                                        $data
-                                        <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
-                                        <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
-                                        <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                <div class="col-12 mt-4">
+                    <h5 class="text-uppercase">descrição</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sapien sociosqu, bibendum leo pretium maximus himenaeos netus vel sem tincidunt, nec quisque lectus orci phasellus consequat aptent ac</p>
+
+                </div>
+                <div class="col-12 mt-4">
+                    <h5 class="text-uppercase">contato</h5>
+                    <a class="link-dark" href="mailto:m.bluth@example.com">e-mai.contato@gmail.com</a>
+                    <br>
+                    <a  class="link-dark" href="https://api.whatsapp.com/send?phone=15551234567">(00) 0000-0000</a>
+                    <br>
+                    <a class="link-dark" href="tel:+123456789">(00) 0000-0000</a>
+                </div>
+                <div class="col-12 mt-4">
+                    <h5 class="text-uppercase">redes sociais</h5>
+                    <a class="link-dark" href="https://www.instagram.com/schiaparelli/">@schiaparelli</a>
+                    <br>
+                    <a class="link-dark" href="https://twitter.com/ChloeBailey">@ChloeBailey</a>
+                    <br>
+                    <a class="link-dark link_save" href="https://example.com">Website</a>
                 </div>
             </div>
         </div>
