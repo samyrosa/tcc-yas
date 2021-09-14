@@ -32,7 +32,7 @@ $cond = $_GET['cond'] ?? null;
   if (empty($pesquisa)) {
     header("Location: explorar.php");
   } else {
-    $sql_1 = "SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img, user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id ";
+    $sql_1 = "SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img, user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira, user_yas.user_id FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id ";
     $sql_2 = "SELECT tag_id,tag_name FROM tag_proj where tag_name like '%$pesquisa%'";
     switch ($cond) {
       case "artista":
@@ -108,7 +108,7 @@ $cond = $_GET['cond'] ?? null;
                   </div>
                   <div class='col-md-8 ps-0 ms-0'>
                       <div class='card-body'>
-                      <a href='user-cadastro.php' class='link-dark'><h5 class='card-title mt-2 mb-0 name'>$reg->user_first_name $reg->user_last_name</h5></a>
+                      <a href='user-perfil.php?cod=$reg->user_id' class='link-dark'><h5 class='card-title mt-2 mb-0 name'>$reg->user_first_name $reg->user_last_name</h5></a>
                           
                           <p class='card-text'><small class='text-muted text-uppercase'>$reg->user_carreira</small></p>
                       </div>

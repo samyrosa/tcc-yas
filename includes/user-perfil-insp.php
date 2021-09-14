@@ -19,7 +19,7 @@
               </div>
               <div class='col-md-8 ps-0 ms-0'>
                   <div class='card-body'>
-                  <a href='user-cadastro.php' class='link-dark'><h5 class='card-title mt-2 mb-0 name'>$reg_user->user_first_name $reg_user->user_last_name</h5></a>
+                  <a href='user-perfil.php?cod=$reg_user->user_id' class='link-dark'><h5 class='card-title mt-2 mb-0 name'>$reg_user->user_first_name $reg_user->user_last_name</h5></a>
                       
                       <p class='card-text'><small class='text-muted text-uppercase'>$reg_user->user_carreira</small></p>
                   </div>
