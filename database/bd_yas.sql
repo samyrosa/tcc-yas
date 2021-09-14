@@ -67,7 +67,7 @@ create table salvo_proj(
 create table user_insp(
     insp_id int not null primary key auto_increment,
     user_id int not null,
-    user_save_id varchar(45) not null unique,
+    user_save_id varchar(45) not null,
     foreign key(user_id) references user(user_id)
 )engine=InnoDB default charset=utf8;
 
