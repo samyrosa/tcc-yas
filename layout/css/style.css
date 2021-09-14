@@ -4,6 +4,7 @@
 body {
   color: var(--yas_color5);
   overflow-x: hidden;
+  font-family: var(--yas_font_type) !important;
 }
 
 h1 {
@@ -264,3 +265,13 @@ a.link_save[href^="https"]::before {
   vertical-align: -.165em;
   font-size: 20px;
 } 
+
+/* preview */
+input[type="file"]#bg-yas {
+  display: none;
+}
+img#previewImg{
+  width: 450px;
+  height: 280px;
+  object-fit: cover;
+}

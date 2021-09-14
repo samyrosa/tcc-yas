@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 
-<body>
+<body >
   <?php
       require_once "includes/connection-bd.php";
       require_once "includes/function/function-login.php";
@@ -27,33 +27,15 @@
   <?php
     require_once "includes/header.php";
     ?>
-
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-6">
-        akjsdhadjk
-      </div>
-      <div class="col-6">
-        <label for="nomeProj">Nome do Projeto</label><input class="form-control shadow " type="text" name="nomeProj"
-          id="nomeProj" size="30" maxlength="30">
-        <label for="descricao">Descrição</label><textarea class="form-control shadow " id="descricao"
-          style="height: 100px"></textarea>
-
-        <select class="form-select shadow mt-3" aria-label="Default select example">
-          <option selected>Tag</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
-        </select>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="container mt-5">
-    upload
-  </div>
-
+  <?php
+        if(is_logado()){
+          require "includes/forms/add-proj-form.html";
+        }
+        else{
+          echo msg_erro("Ops...","Você não pode acessar essa página.<br> Por favor efetue seu <u><b><a class='link-dark' href='user-login.php'>login</a></u></b> ou <u><b><a class='link-dark' href='user-cadastro.php'>cadastre-se</a></u></b> para publicar novas projetos . ","Voltar a explorar","index.php");
+        }
+        require "includes/footer.php"
+      ?>
 
   <!--Bootstrap JS -->
   <script src="bootstrap/js/bootstrap.bundle.js"> </script>
