@@ -100,7 +100,7 @@
                 </div>
                 <div class='row'>
                     <div class='col-12'>
-                        <h5 class='text-muted text-uppercase mt-2'>$reg->user_carreira</h5>
+                        <p class='text-muted text-uppercase mt-2'>$reg->user_carreira</hp>
                     </div>
                 </div>
             </div>";
@@ -114,20 +114,20 @@
                 <div class="col-12">
                     <div class="row pb-2 border-bottom border-2">
                         <div class="col-9">
-                            <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>'" type='button' class='btn btn-primary btn-sm me-4 px-4'>GALERIA</button>
-                            <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>&mod=mim'" type='button' class='btn btn-primary btn-sm me-4 px-3'>SOBRE MIM</button>
+                            <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>'" type='button' class='btn btn-primary btn-sm me-2 px-2'><i class="bi bi-grid-fill"></i> Galeria</button>
+                            <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>&mod=mim'" type='button' class='btn btn-primary btn-sm me-2 px-2'><i class="bi bi-card-text"></i> Sobre Mim</button>
                             <?php
                             if (is_user()) {
                             ?>
-                                <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>&mod=salvos'" type='button' class='btn btn-primary btn-sm me-4 px-3'>SALVOS</button>
-                                <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>&mod=insp'" type='button' class='btn btn-primary btn-sm me-4 px-3'>INSPIRAÇÕES</button>
+                                <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>&mod=salvos'" type='button' class='btn btn-primary btn-sm me-2 px-2'><i class="bi bi-star-fill"></i></button>
+                                <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>&mod=insp'" type='button' class='btn btn-primary btn-sm me-2 px-2'><i class="bi bi-bookmark-fill"></i></button>
                             <?php } ?>
                         </div>
                         <div class="col-3 text-end">
                             <?php
                             if (is_user()) {
                             ?>
-                                <button onclick="window.location.href = 'add-proj.php'" type='button' class='btn btn-success btn-sm px-3'>+PROJETOS</button>
+                                <button onclick="window.location.href = 'add-proj.php'" type='button' class='btn btn-success btn-sm px-3'><i class="bi bi-plus-circle"></i> Projetos </button>
                             <?php } ?>
 
                         </div>

@@ -63,8 +63,8 @@ $cond = $_GET['cond'] ?? null;
             <h5 class="yas_font_ligth text-uppercase mb-0">RESULTADO PARA: <?php echo $pesquisa ?></h5>
           </div>
           <div class="col-6  text-end">
-            <button onclick="window.location.href = 'search.php?pesquisa=<?php echo $pesquisa ?>&cond=projeto'" type='button' class='btn btn-primary btn-sm  me-2 px-3'>Projeto</button>
-            <button onclick="window.location.href = 'search.php?pesquisa=<?php echo $pesquisa ?>&cond=artista'" type='button' class='btn btn-primary btn-sm me-1 px-3'>Artistas</button>
+            <button onclick="window.location.href = 'search.php?pesquisa=<?php echo $pesquisa ?>&cond=projeto'" type='button' class='btn btn-primary btn-sm  me-2 px-3'><i class="bi bi-grid-fill"></i> Galeria</button>
+            <button onclick="window.location.href = 'search.php?pesquisa=<?php echo $pesquisa ?>&cond=artista'" type='button' class='btn btn-primary btn-sm me-1 px-3'><i class="bi bi-person-fill"></i> Artistas</button>
           </div>
         </div>
       </div>
