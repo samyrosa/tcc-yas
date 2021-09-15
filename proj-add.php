@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-  <title>Your Save Art</title>
+  <title>Crie seu projeto</title>
   <!-- Meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,9 +30,11 @@
   <?php
         if(is_logado()){
           if(!isset($_POST['nomeProj'])){
-            require_once "includes/forms/add-proj-form.html";
+            require_once "includes/forms/proj-add-form.html";
         }else{
           echo"ok";
+          $array =$_FILES['files']['name'];
+          print_r(array_values ($array));
         }
         }
         else{
