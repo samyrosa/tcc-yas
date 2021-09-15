@@ -100,7 +100,7 @@
                 </div>
                 <div class='row'>
                     <div class='col-12'>
-                        <p class='text-muted text-uppercase mt-2'>$reg->user_carreira</hp>
+                        <p class='text-muted text-uppercase mt-2'>$reg->user_carreira</p>
                     </div>
                 </div>
             </div>";

@@ -29,7 +29,11 @@
     ?>
   <?php
         if(is_logado()){
-          require "includes/forms/add-proj-form.html";
+          if(!isset($_POST['nomeProj'])){
+            require_once "includes/forms/add-proj-form.html";
+        }else{
+          echo"ok";
+        }
         }
         else{
           echo msg_erro("Ops...","Você não pode acessar essa página.<br> Por favor efetue seu <u><b><a class='link-dark' href='user-login.php'>login</a></u></b> ou <u><b><a class='link-dark' href='user-cadastro.php'>cadastre-se</a></u></b> para publicar novas projetos . ","Voltar a explorar","index.php");
