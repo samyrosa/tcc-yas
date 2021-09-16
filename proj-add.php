@@ -33,8 +33,20 @@
             require_once "includes/forms/proj-add-form.html";
         }else{
           echo"ok";
-          $array =$_FILES['files']['name'];
-          print_r(array_values ($array));
+          $user = $_SESSION['id'];
+          $data =  date("y-m-d h:m:s");
+          $nome = $_POST['nomeProj']??null;
+          $desc = $_POST['desc']??null;
+          $tag = $_POST['tag']??null;
+          $bg_projet = $_FILES['bg_projet']['name']??null;
+          $array =$_FILES['files']['name']??null;
+          if(empty($nome)||empty($desc)||empty($tag)||empty($bg_projet)||empty($array)){
+            echo msg_erro("Opps...","Todos os dados são obrigatórios.","Tentar Novamente","proj-add.php");
+          }else{
+            print_r(array_values ($array));
+            print_r($data);
+            print_r($user);
+          }
         }
         }
         else{

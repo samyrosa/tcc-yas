@@ -138,7 +138,7 @@
                             <?php
                             if (is_user()) {
                             ?>
-                            <button onclick="window.location.href = 'add-proj.php'" type='button'
+                            <button onclick="window.location.href = 'proj-add.php'" type='button'
                                 class='btn btn-success btn-sm px-3'><i class="bi bi-plus-circle"></i> Projetos </button>
                             <?php } ?>
 
