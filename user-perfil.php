@@ -53,7 +53,7 @@
                             <div class='col-12 mt-3 text-center'>";
                         if (is_user()) {
             ?>
-            <button onclick="window.location.href = 'user-edit.php'" type='button' class='btn btn-success btn-sm '><i
+            <button onclick="window.location.href = 'user-edit.php?cod=<?php echo $cod;?>'" type='button' class='btn btn-success btn-sm '><i
                     class="bi bi-pencil-square"></i></button>
 
             <?php

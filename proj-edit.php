@@ -28,7 +28,7 @@
         require_once "includes/header.php";
         $cod = $_GET['cod'] ?? null;
         if(is_logado()){
-            require_once "includes/forms/user-edit-form.php";
+            require_once "includes/forms/proj-edit-form.php";
         }
         else{
             echo msg_erro("Ops...","Você não pode acessar essa página.<br> Por favor efetue seu <u><b><a class='link-dark' href='user-login.php'>login</a></u></b> ou <u><b><a class='link-dark' href='user-cadastro.php'>cadastre-se</a></u></b>. ","Voltar a explorar","index.php");
