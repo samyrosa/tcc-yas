@@ -31,7 +31,7 @@ $value = $busca->fetch_object();
                 </div>
                 <div class="col">
                     <label for="descricao">Descrição</label><textarea class="form-control shadow " id="descricao"
-                        style="height: 100px" value="<?php echo $value->desc?>"></textarea>
+                        style="height: 200px"><?php echo $value->user_desc ?></textarea>
                 </div>
                 <div class="container-fluid my-4 border-bottom border-dark border-1">
                     <h5>CONTATOS</h5>
