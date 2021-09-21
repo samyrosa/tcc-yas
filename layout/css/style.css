@@ -275,3 +275,6 @@ img#previewImg{
   height: 280px;
   object-fit: cover;
 }
+img.card-img{
+  background-image: cover !important;
+}

@@ -30,13 +30,13 @@
   <?php
   if (is_logado()) {
     if (!isset($_POST['nomeProj'])) {
-      require_once "includes/forms/proj-add-form.html";
+      require_once "includes/forms/proj-add-form.php";
     } else {
-      echo "ok";
       $user = $_SESSION['id'];
       $data =  date("y-m-d h:m:s");
       $nome = $_POST['nomeProj'] ?? null;
       $desc = $_POST['desc'] ?? null;
+      $id = strlen($nome). date("s");
       $tag = $_POST['tag'] ?? null;
       $bg_projet = $_FILES['bg_projet']['name'] ?? null;
       $array = $_FILES['files']['name'] ?? null;
@@ -45,12 +45,25 @@
       } else {
         if (isset($_FILES['bg_projet'])) {
           $ext = pathinfo($_FILES['bg_projet']['name'], PATHINFO_EXTENSION); //Pegando extensão do arquivo
-          $new_name = date("Y.m.d-H.i.s.") . $ext; //Definindo um novo nome para o arquivo
-          $dir = 'upload/image/'; //Diretório para uploads
+          $new_name = "YAS-" . date("Y.m.d-H.i.s.") . $ext; //Definindo um novo nome para o arquivo
+          $dir = 'upload/img-proj-bg/'; //Diretório para uploads
           move_uploaded_file($_FILES['bg_projet']['tmp_name'], $dir . $new_name); //Fazer upload do arquivo
           $bg_projet = $new_name;
-          for($x = 0; $x < count($array); $x++){
-            print_r(array_values ($array));
+          $sql = "insert into projeto(proj_id, user_id, tag_id, proj_name, proj_desc, proj_back_img, proj_data) values('$id', '$user', '$tag', ' $nome', '$desc', '$new_name', '$data')";
+          if ($banco->query($sql)) {
+            echo msg_sucesso("Parabéns...", "$nome, foi criado com sucesso", "Entrar", "index.php");
+          } else {
+            echo msg_erro("Opss...", "$nome nao deu certo nao", "Tentar Novamente", "proj-add.php");
+          }
+          for ($x = 0; $x < count($array); $x++) {
+            $exten = pathinfo($_FILES['files']['name'][$x], PATHINFO_EXTENSION); //Pegando extensão do arquivo
+          $img_name = "yas-" . date("Y.m.d-H.i.s.") . $ext; //Definindo um novo nome para o arquivo
+          $diret = 'upload/img-proj/'; //Diretório para uploads
+          move_uploaded_file($_FILES['files']['tmp_name'][$x], $diret . $img_name); //Fazer upload do arquivo
+            $sql_img = "insert into img_proj(proj_id, proj_img) values ('$id', '$img_name')";
+            if ($banco->query($sql_img)) {
+
+            }
           }
         }
       }

@@ -1,6 +1,6 @@
 <?php
     function img_perfil($arq) {
-        $caminho="uplod/img-user/$arq";
+        $caminho="upload/img-user/$arq";
 
         if (is_null($arq) || !file_exists($caminho) || empty($arq)) {
             return "layout/image/user-yas.png";
@@ -12,7 +12,7 @@
     }
 
     function bg_proj($arq) {
-        $caminho="uplod/img-proj-bg/$arq";
+        $caminho="upload/img-proj-bg/$arq";
 
         if (is_null($arq) || !file_exists($caminho) || empty($arq)) {
             return "layout/image/bg-yas.png";

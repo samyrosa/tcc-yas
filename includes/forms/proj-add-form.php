@@ -89,9 +89,12 @@
                 <label for="tag">Tag</label>
                 <select class="form-select shadow " name="tag" aria-label="Default select example">
                     <option selected>Tag</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php
+                    $busca = $banco->query("select * from tag_proj");
+                    while ($value = $busca->fetch_object()) {
+                        echo "<option value='$value->tag_id'>$value->tag_name</option>";
+                    }
+                    ?>
                 </select>
             </div>
         </div>
