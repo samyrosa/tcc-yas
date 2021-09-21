@@ -1,12 +1,13 @@
 
 <div class="col-12">
-    <div class='row row-cols-1 row-cols-md-2 g-3 mt-1'>
+    
     <?php
       $galeria = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img, user_yas.user_first_name, user_yas.user_id, user_yas.user_last_name, user_yas.user_foto FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id  WHERE user_yas.user_id= $cod");
       if(!$galeria){
         echo msg_erro('Opp..','Falha na busca do banco de dados, por favor tente denovo','Tentar Novamente','index.php');
       }else{
         if($galeria->num_rows>0){
+          echo "<div class='row row-cols-1 row-cols-md-2 g-3 mt-1'>";
           while($reg_galeria=$galeria->fetch_object()){
             $bg = bg_proj($reg_galeria->proj_back_img);
             $datatime = new DateTime($reg_galeria->proj_data);
@@ -26,9 +27,11 @@
               </a>
             ";
           }
+          echo "</div>";
         }
         else{
-          echo msg_erro('Opp..','Nenhum reg_galeriaistro encontrado, por favor tente denovo','Tentar Novamente','index.php');
+          echo "<br>";
+          echo msg_local_avisso("Nenhum registro!!!");
         }
       }
     ?>
