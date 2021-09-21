@@ -42,22 +42,11 @@
                 </a>
             </div>
             <div class="col mx-2 text-center">
-                <?php
-                $busca = $banco->query("SELECT * FROM `tag_proj` ORDER BY RAND() LIMIT 5");
-                if (!$busca) {
-                    echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
-                } else {
-                    if ($busca->num_rows > 0) {
-                        while ($reg_tag = $busca->fetch_object()) {
-                ?>
-                            <button type='button' onclick="window.location.href = 'tag.php?cod=<?php echo $reg_tag->tag_id ?>'" class='btn btn-primary btn-lg me-2 shadow '><?php echo $reg_tag->tag_name ?></button>
-                <?php
-                        }
-                    } else {
-                        echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
-                    }
-                }
-                ?>
+                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Arte digital</button>
+                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Arte urbana</button>
+                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Design de moda</button>
+                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Design gráfico</button>
+                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Fotografia de beleza</button>
             </div>
         </div>
     </div>
@@ -117,9 +106,9 @@
                         if ($busca->num_rows > 0) {
                             while ($reg = $busca->fetch_object()) {
                                 $bg = bg_proj($reg->proj_back_img);
-              $perfil = img_perfil($reg->user_foto);
-              $datatime = new DateTime($reg->proj_data);
-              $data = $datatime->format("d / m / y",);
+                                $perfil = img_perfil($reg->user_foto);
+                                $datatime = new DateTime($reg->proj_data);
+                                $data = $datatime->format("d / m / y",);
                                 echo "<a href='view-proj.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
@@ -143,7 +132,7 @@
             </div>
             <div class="carousel-item">
                 <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
-                <?php
+                    <?php
                     $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
                     if (!$busca) {
                         echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
@@ -151,9 +140,9 @@
                         if ($busca->num_rows > 0) {
                             while ($reg = $busca->fetch_object()) {
                                 $bg = bg_proj($reg->proj_back_img);
-              $perfil = img_perfil($reg->user_foto);
-              $datatime = new DateTime($reg->proj_data);
-              $data = $datatime->format("d / m / y",);
+                                $perfil = img_perfil($reg->user_foto);
+                                $datatime = new DateTime($reg->proj_data);
+                                $data = $datatime->format("d / m / y",);
                                 echo "<a href='view-proj.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
@@ -177,7 +166,7 @@
             </div>
             <div class="carousel-item">
                 <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
-                <?php
+                    <?php
                     $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
                     if (!$busca) {
                         echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
@@ -185,9 +174,9 @@
                         if ($busca->num_rows > 0) {
                             while ($reg = $busca->fetch_object()) {
                                 $bg = bg_proj($reg->proj_back_img);
-              $perfil = img_perfil($reg->user_foto);
-              $datatime = new DateTime($reg->proj_data);
-              $data = $datatime->format("d / m / y",);
+                                $perfil = img_perfil($reg->user_foto);
+                                $datatime = new DateTime($reg->proj_data);
+                                $data = $datatime->format("d / m / y",);
                                 echo "<a href='view-proj.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
@@ -241,9 +230,9 @@
                         if ($busca->num_rows > 0) {
                             while ($reg = $busca->fetch_object()) {
                                 $bg = bg_proj($reg->proj_back_img);
-              $perfil = img_perfil($reg->user_foto);
-              $datatime = new DateTime($reg->proj_data);
-              $data = $datatime->format("d / m / y",);
+                                $perfil = img_perfil($reg->user_foto);
+                                $datatime = new DateTime($reg->proj_data);
+                                $data = $datatime->format("d / m / y",);
                                 echo "<a href='view-proj.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
@@ -267,7 +256,7 @@
             </div>
             <div class="carousel-item">
                 <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
-                <?php
+                    <?php
                     $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
                     if (!$busca) {
                         echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
@@ -275,9 +264,9 @@
                         if ($busca->num_rows > 0) {
                             while ($reg = $busca->fetch_object()) {
                                 $bg = bg_proj($reg->proj_back_img);
-              $perfil = img_perfil($reg->user_foto);
-              $datatime = new DateTime($reg->proj_data);
-              $data = $datatime->format("d / m / y",);
+                                $perfil = img_perfil($reg->user_foto);
+                                $datatime = new DateTime($reg->proj_data);
+                                $data = $datatime->format("d / m / y",);
                                 echo "<a href='view-proj.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
@@ -301,7 +290,7 @@
             </div>
             <div class="carousel-item">
                 <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
-                <?php
+                    <?php
                     $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
                     if (!$busca) {
                         echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
@@ -309,9 +298,9 @@
                         if ($busca->num_rows > 0) {
                             while ($reg = $busca->fetch_object()) {
                                 $bg = bg_proj($reg->proj_back_img);
-              $perfil = img_perfil($reg->user_foto);
-              $datatime = new DateTime($reg->proj_data);
-              $data = $datatime->format("d / m / y",);
+                                $perfil = img_perfil($reg->user_foto);
+                                $datatime = new DateTime($reg->proj_data);
+                                $data = $datatime->format("d / m / y",);
                                 echo "<a href='view-proj.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
@@ -365,9 +354,9 @@
                         if ($busca->num_rows > 0) {
                             while ($reg = $busca->fetch_object()) {
                                 $bg = bg_proj($reg->proj_back_img);
-              $perfil = img_perfil($reg->user_foto);
-              $datatime = new DateTime($reg->proj_data);
-              $data = $datatime->format("d / m / y",);
+                                $perfil = img_perfil($reg->user_foto);
+                                $datatime = new DateTime($reg->proj_data);
+                                $data = $datatime->format("d / m / y",);
                                 echo "<a href='view-proj.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
@@ -391,7 +380,7 @@
             </div>
             <div class="carousel-item">
                 <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
-                <?php
+                    <?php
                     $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
                     if (!$busca) {
                         echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
@@ -399,9 +388,9 @@
                         if ($busca->num_rows > 0) {
                             while ($reg = $busca->fetch_object()) {
                                 $bg = bg_proj($reg->proj_back_img);
-              $perfil = img_perfil($reg->user_foto);
-              $datatime = new DateTime($reg->proj_data);
-              $data = $datatime->format("d / m / y",);
+                                $perfil = img_perfil($reg->user_foto);
+                                $datatime = new DateTime($reg->proj_data);
+                                $data = $datatime->format("d / m / y",);
                                 echo "<a href='view-proj.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
@@ -425,7 +414,7 @@
             </div>
             <div class="carousel-item">
                 <div class='row row-cols-1 row-cols-md-3 g-3 mx-3'>
-                <?php
+                    <?php
                     $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img,  user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id   ORDER BY RAND() LIMIT 3");
                     if (!$busca) {
                         echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
@@ -433,9 +422,9 @@
                         if ($busca->num_rows > 0) {
                             while ($reg = $busca->fetch_object()) {
                                 $bg = bg_proj($reg->proj_back_img);
-              $perfil = img_perfil($reg->user_foto);
-              $datatime = new DateTime($reg->proj_data);
-              $data = $datatime->format("d / m / y",);
+                                $perfil = img_perfil($reg->user_foto);
+                                $datatime = new DateTime($reg->proj_data);
+                                $data = $datatime->format("d / m / y",);
                                 echo "<a href='view-proj.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>

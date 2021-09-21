@@ -71,7 +71,7 @@
 <br><br>
 <br>
 <div class="container mt-5 mb-5">
-        <h2 class="m-5 text-center yas_font_bold">OS QUATROS PILARES DO YOUR ART SAVE</h2>
+        <h2 class="m-5 text-center yas_font_bold">OS QUATRO PILARES DO YOUR ART SAVE</h2>
         <div class="row">
                 <div class="col-2 mx-5 ">
                         <div class="yas_card border-0 shadow">

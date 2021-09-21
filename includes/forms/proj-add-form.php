@@ -103,7 +103,7 @@
         <div class="row">
             <div class="col-sm-2 imgUp">
                 <div class="imagePreview"></div><label class="btn btn-success"><i class="bi bi-cloud-upload"></i>
-                    Upload<input type="file" class="uploadFile img" name="files[]" value="Upload Photo"
+                    Upload<input type="file" class="uploadFile img" name="files[]" multiple="multiple" value="Upload Photo"
                         style="width:0px;height:0px;overflow:hidden;"></label> <button type="button"
                     class="btn btn-primary del"><i class="bi bi-trash "> </i> Deletar</button>
             </div>

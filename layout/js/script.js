@@ -16,7 +16,7 @@ function previewFile(input) {
 // preview multiplos img
 $(".imgAdd").click(function () {
     $(this).closest(".row").find('.imgAdd').before(
-        '<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-success"><i class="bi bi-cloud-upload"></i> Upload<input type="file" class="uploadFile img" name="files[]" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label>  <button type="button" class="btn btn-primary del"><i class="bi bi-trash " > </i> Deletar</button></div>'
+        '<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-success"><i class="bi bi-cloud-upload"></i> Upload<input type="file" class="uploadFile img" name="files[]" multiple="multiple" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label>  <button type="button" class="btn btn-primary del"><i class="bi bi-trash " > </i> Deletar</button></div>'
     );
 });
 $(document).on("click", "button.del", function () {
