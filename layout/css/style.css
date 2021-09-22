@@ -278,3 +278,7 @@ img#previewImg{
 img.card-img{
   background-image: cover !important;
 }
+
+.img-detalhe{
+  object-fit: cover;
+}
