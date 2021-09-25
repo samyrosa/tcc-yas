@@ -1,10 +1,10 @@
--- drop database bd_yas;
+drop database bd_yas;
 
 create database bd_yas default character set utf8 collate utf8_general_ci;
 
 use bd_yas;
 
-create table user(
+create table user_yas(
     user_id int not null primary key auto_increment,
     user_email varchar(400) not null unique,
     user_senha varchar(70) not null,
@@ -39,7 +39,7 @@ create table projeto(
     proj_name varchar(100) not null,
     proj_desc mediumtext not null,
     proj_back_img varchar(60) not null,
-    foreign key(user_id) references user(user_id),
+    foreign key(user_id) references user_yas(user_id),
     foreign key(tag_id) references tag_proj(tag_id)
 )engine=InnoDB default charset=utf8;
 
@@ -58,7 +58,7 @@ create table salvo_proj(
     salvos_id int not null primary key auto_increment,
     user_id int not null,
     proj_id int not null,
-    foreign key(user_id) references user(user_id),
+    foreign key(user_id) references user_yas(user_id),
     foreign key(proj_id) references projeto(proj_id)
 )engine=InnoDB default charset=utf8;
 
@@ -68,7 +68,7 @@ create table user_insp(
     insp_id int not null primary key auto_increment,
     user_id int not null,
     user_save_id varchar(45) not null,
-    foreign key(user_id) references user(user_id)
+    foreign key(user_id) references user_yas(user_id)
 )engine=InnoDB default charset=utf8;
 
 -- select * from user_insp;
