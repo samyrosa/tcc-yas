@@ -109,7 +109,7 @@
                                 $perfil = img_perfil($reg->user_foto);
                                 $datatime = new DateTime($reg->proj_data);
                                 $data = $datatime->format("d / m / y",);
-                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+                                echo "<a href='proj-view.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
                 <img src='$bg' height='250' class='card-img'>
@@ -143,7 +143,7 @@
                                 $perfil = img_perfil($reg->user_foto);
                                 $datatime = new DateTime($reg->proj_data);
                                 $data = $datatime->format("d / m / y",);
-                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+                                echo "<a href='proj-view.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
                 <img src='$bg' height='250' class='card-img'>
@@ -177,7 +177,7 @@
                                 $perfil = img_perfil($reg->user_foto);
                                 $datatime = new DateTime($reg->proj_data);
                                 $data = $datatime->format("d / m / y",);
-                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+                                echo "<a href='proj-view.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
                 <img src='$bg' height='250' class='card-img'>
@@ -233,7 +233,7 @@
                                 $perfil = img_perfil($reg->user_foto);
                                 $datatime = new DateTime($reg->proj_data);
                                 $data = $datatime->format("d / m / y",);
-                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+                                echo "<a href='proj-view.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
                 <img src='$bg' height='250' class='card-img'>
@@ -267,7 +267,7 @@
                                 $perfil = img_perfil($reg->user_foto);
                                 $datatime = new DateTime($reg->proj_data);
                                 $data = $datatime->format("d / m / y",);
-                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+                                echo "<a href='proj-view.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
                 <img src='$bg' height='250' class='card-img'>
@@ -301,7 +301,7 @@
                                 $perfil = img_perfil($reg->user_foto);
                                 $datatime = new DateTime($reg->proj_data);
                                 $data = $datatime->format("d / m / y",);
-                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+                                echo "<a href='proj-view.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
                 <img src='$bg' height='250' class='card-img'>
@@ -357,7 +357,7 @@
                                 $perfil = img_perfil($reg->user_foto);
                                 $datatime = new DateTime($reg->proj_data);
                                 $data = $datatime->format("d / m / y",);
-                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+                                echo "<a href='proj-view.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
                 <img src='$bg' height='250' class='card-img'>
@@ -391,7 +391,7 @@
                                 $perfil = img_perfil($reg->user_foto);
                                 $datatime = new DateTime($reg->proj_data);
                                 $data = $datatime->format("d / m / y",);
-                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+                                echo "<a href='proj-view.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
                 <img src='$bg' height='250' class='card-img'>
@@ -425,7 +425,7 @@
                                 $perfil = img_perfil($reg->user_foto);
                                 $datatime = new DateTime($reg->proj_data);
                                 $data = $datatime->format("d / m / y",);
-                                echo "<a href='view-proj.php?cod=$reg->proj_id'>
+                                echo "<a href='proj-view.php?cod=$reg->proj_id'>
             <div class='col'>
               <div class='card position-relative'>
                 <img src='$bg' height='250' class='card-img'>

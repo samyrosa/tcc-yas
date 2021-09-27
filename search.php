@@ -130,7 +130,7 @@ $cond = $_GET['cond'] ?? null;
               $datatime = new DateTime($reg->proj_data);
               $data = $datatime->format("d / m / y",);
               echo "
-                <a href='view-proj.php?cod=$reg->proj_id'>
+                <a href='proj-view.php?cod=$reg->proj_id'>
                   <div class='col'>
                     <div class='card position-relative'>
                       <img src='$bg' height='250' class='card-img'>
