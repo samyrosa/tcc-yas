@@ -36,7 +36,6 @@
       $data =  date("y-m-d h:m:s");
       $nome = $_POST['nomeProj'] ?? null;
       $desc = $_POST['desc'] ?? null;
-      $id = strlen($nome). date("s");
       $tag = $_POST['tag'] ?? null;
       $bg_projet = $_FILES['bg_projet']['name'] ?? null;
       $array = $_FILES['files']['name'] ?? null;
@@ -50,18 +49,18 @@
           move_uploaded_file($_FILES['bg_projet']['tmp_name'], $dir . $new_name); //Fazer upload do arquivo
           $sql = "insert into projeto(proj_id, user_id, tag_id, proj_name, proj_desc, proj_back_img, proj_data) values('$id', '$user', '$tag', ' $nome', '$desc', '$new_name', '$data')";
           if ($banco->query($sql)) {
-            echo msg_sucesso("Parabéns...", "$nome, foi criado com sucesso", "Entrar", "index.php");
+            $id = $banco->insert_id;
+            echo msg_sucesso("Parabéns...", "$nome, foi criado com sucesso", "Dar uma olhada", "index.php");
           } else {
             echo msg_erro("Opss...", "$nome nao deu certo nao", "Tentar Novamente", "proj-add.php");
           }
           for ($x = 0; $x < count($array); $x++) {
             $exte = pathinfo($array[$x], PATHINFO_EXTENSION);
-          $img_name = "yas-$x-" . date("ymd.") . $exte;;
-          $diret = 'upload/img-proj/'; //Diretório para uploads
-          move_uploaded_file($_FILES['files']['tmp_name'][$x], $diret . $img_name); //Fazer upload do arquivo
+            $img_name = "yas-$x-$id-" . date("ymd.") . $exte;;
+            $diret = 'upload/img-proj/'; //Diretório para uploads
+            move_uploaded_file($_FILES['files']['tmp_name'][$x], $diret . $img_name); //Fazer upload do arquivo
             $sql_img = "insert into img_proj(proj_id, proj_img) values ('$id', '$img_name')";
             if ($banco->query($sql_img)) {
-
             }
           }
         }
