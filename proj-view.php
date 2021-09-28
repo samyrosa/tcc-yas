@@ -53,12 +53,12 @@
                     <?php
                     if (is_user()) {
                     ?>
-                    <button onclick="window.location.href = 'user-edit.php?cod=<?php echo $cod;?>'" type='button'
+                    <button onclick="window.location.href = '#'" type='button'
                         class='btn btn-success btn-sm '><i class="bi bi-pencil-square"></i>Editar</button>
                     <?php
             } else {
             ?>
-                    <button onclick="window.location.href = 'user-edit.php?cod=<?php echo $cod;?>'" type='button'
+                    <button onclick="window.location.href = '#'" type='button'
                         class='btn btn-primary btn-sm '><i class="bi bi-star"></i> Salvar</button>
                     <?php
             }
