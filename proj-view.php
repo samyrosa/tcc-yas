@@ -28,7 +28,7 @@
     <?php
         require_once "includes/header.php";;
         $cod = $_GET['cod'] ?? null;
-        $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_back_img, projeto.proj_id, user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, projeto.proj_name, projeto.proj_desc, tag.tag_name from projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id join tag_proj tag on projeto.tag_id=tag.tag_id where projeto.proj_id='$cod'");
+        $busca = $banco->query("SELECT projeto.proj_data, projeto.proj_back_img, projeto.proj_id, projeto.user_id, user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, projeto.proj_name, projeto.proj_desc, tag.tag_name from projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id join tag_proj tag on projeto.tag_id=tag.tag_id where projeto.proj_id='$cod'");
  
         ?>
 
@@ -51,24 +51,33 @@
                 </div>
                 <div class="col-7 ps-5">
                     <?php
+                        if(is_logado()){
+
+                        
+                    ?>
+                    <?php
                     if (is_user()) {
                     ?>
-                    <button onclick="window.location.href = '#'" type='button'
-                        class='btn btn-success btn-sm '><i class="bi bi-pencil-square"></i>Editar</button>
+                    <button onclick="window.location.href = 'proj-edit.php?cod=<?php echo $reg->proj_id?>'" type='button' class='btn btn-success btn-sm mb-2 '><i
+                            class="bi bi-pencil-square"></i>Editar</button>
                     <?php
             } else {
             ?>
-                    <button onclick="window.location.href = '#'" type='button'
-                        class='btn btn-primary btn-sm '><i class="bi bi-star"></i> Salvar</button>
+                    <button onclick="window.location.href = '#'" type='button' class='btn btn-primary btn-sm mb-2'><i
+                            class="bi bi-star"></i> Salvar</button>
                     <?php
             }
             ?>
-                    <h2><?php echo $reg->proj_name?></h2>
+                    <?php
+                        }
+            ?>
+                    <h2 class="text-uppercase"><?php echo $reg->proj_name?></h2>
                     <h5 class="yas_font_ligth"><?php echo $reg->tag_name?></h5>
                     <h5 class="yas_font_ligth"><?php echo $reg->proj_data?></h5>
-                    <h5 class="yas_font_ligth"><?php echo $reg->proj_desc?></h5>
-                    <h5 class="text-uppercase">
-                        <?php echo "<img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name&nbsp$reg->user_last_name"?>
+                    <h5 class="yas_font_ligth"><?php echo mb_strimwidth("$reg->proj_desc", 0, 160, "...") ?></h5>
+                    <h5 class="name mt-3">
+                        <a class="link-dark"
+                            href="user-perfil.php?cod=<?php echo $reg->user_id?>"><?php echo "<img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name&nbsp$reg->user_last_name"?></a>
                     </h5>
                 </div>
             </div>
