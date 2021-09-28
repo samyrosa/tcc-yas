@@ -78,7 +78,7 @@
             <div class="col-5">
                 <label class="preview-yas">
                     <input type="file" name="bg_projet" id="bg-yas" onchange="previewFile(this);" accept="image/*">
-                    <img id="previewImg" class="rounded-3" src="layout/image/preview-yas.png" alt="Placeholder">
+                    <img id="previewImg" class="rounded-3" src="layout/image/preview-yas.png"  width='450' height='280' alt="Placeholder">
                 </label>
             </div>
             <div class="col-7 ps-5">

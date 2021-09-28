@@ -271,8 +271,6 @@ input[type="file"]#bg-yas {
   display: none;
 }
 img#previewImg{
-  width: 450px;
-  height: 280px;
   object-fit: cover;
 }
 img.card-img{
@@ -281,4 +279,7 @@ img.card-img{
 
 .img-detalhe{
   object-fit: cover;
+}
+input#edit_yas{
+  display: none;
 }
