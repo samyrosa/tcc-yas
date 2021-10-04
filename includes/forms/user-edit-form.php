@@ -39,23 +39,23 @@ $value = $busca->fetch_object();
                         name="ocupacao" id="ocupacao" value="<?php echo $value->user_carreira ?>">
                 </div>
                 <div class="col">
-                    <label for="descricao">Descrição</label><textarea class="form-control shadow " id="descricao"
+                    <label for="descricao">Descrição</label><textarea class="form-control shadow " name="descricao" id="descricao"
                         style="height: 200px"><?php echo $value->user_desc ?></textarea>
                 </div>
                 <div class="container-fluid my-4 border-bottom border-dark border-1">
                     <h5>CONTATOS</h5>
                 </div>
                 <div class="col"> <label for="email">Email</label><input class="form-control shadow " type="email"
-                        name="cont-email" id="cont-email" value="<?php echo $value->user_email_cont ?>">
+                        name="cont-email" id="cont-email" maxlength="400" value="<?php echo $value->user_email_cont ?>">
                 </div>
                 <div class="row">
                     <div class="col-6"> <label for="phone">Telefone</label><input class="form-control shadow" type="tel"
-                            id="phone" name="phone" placeholder="(DD) 12345-6789"
+                            id="phone" name="phone" placeholder="DD12345-6789" maxlength="11"
                             value="<?php echo $value->user_telefone_cont ?>">
                     </div>
                     <div class="col-6">
                         <label for="phone">WhatsApp</label><input class="form-control shadow" type="tel" id="whatsapp"
-                            name="whatsapp" placeholder="(DD) 12345-6789"
+                            name="whatsapp" placeholder="DD12345-6789" maxlength="11"
                             value="<?php echo $value->user_whatsapp_cont ?>">
                     </div>
                 </div>
@@ -64,17 +64,17 @@ $value = $busca->fetch_object();
                 </div>
                 <div class="row">
                     <div class="col"><label for="instagram">Instagram</label><input class="form-control shadow "
-                            type="text" name="insta" id="insta" size="30" maxlength="30"
+                            type="text" name="insta" id="insta" size="30" maxlength="20"
                             value="<?php echo $value->social_insta ?>">
                     </div>
                     <div class="col"><label for="twitter">Twitter</label><input class="form-control shadow " type="text"
-                            name="twitter" id="twitter" size="30" maxlength="30"
+                            name="twitter" id="twitter" size="30" maxlength="20"
                             value="<?php echo $value->social_twitter ?>">
                     </div>
                 </div>
                 <div class="col mb-3">
                     <label for="link">Link</label><input class="form-control shadow " type="text" name="link" id="link"
-                        size="30" maxlength="30" value="<?php echo $value->social_url ?>">
+                        size="30" maxlength="50" value="<?php echo $value->social_url ?>">
                 </div>
             </div>
             <div class="container my-5 text-end">
