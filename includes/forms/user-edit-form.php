@@ -3,12 +3,12 @@ $busca = $banco->query("select * from user_yas where user_id='$cod'");
 $value = $busca->fetch_object();
 ?>
 
-<form action='user-edit.php?cod=<?php echo $cod?>' method="post">
+<form action='user-edit.php?cod=<?php echo $cod?>' method="post" enctype="multipart/form-data">
     <div class="container mt-5 pe-5 rounded-3" style="background-color:#e6e0de;">
         <div class="row">
             <div class="col-4 pt-5 text-center">
                 <label class="preview-yas">
-                    <input type="file" name="bg_projet" id="bg-yas" onchange="previewFile(this);" accept="image/*">
+                    <input type="file" name="userfoto" id="bg-yas" onchange="previewFile(this);" accept="image/*">
                     <?php
                     $perfil = img_perfil($reg->user_foto);
                     echo "<img id='previewImg' src='$perfil' alt='mdo' width='180' height='180' class='rounded-circle '>"
