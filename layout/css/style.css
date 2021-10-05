@@ -259,7 +259,7 @@ a[href^="https://twitter.com/"]::before {
   vertical-align: -.165em;
   font-size: 20px;
 } 
-a.link_save[href^="https"]::before {
+a.link_save::before {
   font-family: bootstrap-icons !important;
   content: "\f470  ";
   vertical-align: -.165em;
