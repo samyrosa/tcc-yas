@@ -5,11 +5,15 @@ if (!$busca) {
 } else {
     if ($busca->num_rows > 0) {
         while ($reg = $busca->fetch_object()) {
-            echo "<div class='col-12 mt-4'>
-            <h5 class='text-uppercase'>descrição</h5>
-            <p class='descri'>$reg->user_desc</p>
-        
-        </div>
+            if (empty($reg->user_desc) || is_null($reg->user_desc)){
+                
+            }else{
+                echo"<div class='col-12 mt-4'>
+                <h5 class='text-uppercase'>descrição</h5>
+                <p class='descri'>$reg->user_desc</p>
+            </div>";
+            }
+            echo "
         <div class='col-12 mt-4'>
             <h5 class='text-uppercase'>contato</h5>
             <a class='link-dark' href='mailto:$reg->user_email_cont'>$reg->user_email_cont</a>
@@ -32,4 +36,3 @@ if (!$busca) {
         echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
     }
 }
-?>

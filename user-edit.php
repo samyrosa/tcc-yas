@@ -44,12 +44,12 @@
             $link = $_POST['link'] ?? null;
             $foto = $_FILES['userfoto'] ?? null;
             $id= $_SESSION['id'];
-
             $q = "update user_yas set user_first_name='$nome', user_last_name='$sobrenome', user_carreira='$ocupacao', user_desc='$desc',
                 user_email_cont='$email', user_telefone_cont='$telefone', user_whatsapp_cont='$whatsapp', social_insta='$insta', 
                 social_twitter='$twitter', social_url='$link', ";
-            if (!empty($foto) || !is_null($foto)) {
-                    $ext = pathinfo($_FILES['userfoto']['name'], PATHINFO_EXTENSION); //Pegando extensão do arquivo
+            if (empty($foto['name']) || is_null($foto['name'])) {
+            }else{
+                $ext = pathinfo($_FILES['userfoto']['name'], PATHINFO_EXTENSION); //Pegando extensão do arquivo
                     $new_name = "YAS-" . date("Y.m.d-H.i.s.") . $ext; //Definindo um novo nome para o arquivo
                     $dir = 'upload/img-user/'; //Diretório para uploads
                     move_uploaded_file($_FILES['userfoto']['tmp_name'], $dir . $new_name); //Fazer upload do arquivo
@@ -57,9 +57,8 @@
                     $q .= " user_foto='$new_name'";
             }
             $q .= " where user_id = '$id'";
-            echo "$q";
             if ($banco->query($q)) {
-                echo msg_sucesso("Parabéns...", "$nome $sobrenome, seus dados foram alterados com sucesso.", "Voltar a Explorar", "index.php");
+                return 'index.php';
             }
         }
     } else {
