@@ -6,7 +6,7 @@ $value = $busca->fetch_object();
 <form action='user-edit.php?cod=<?php echo $cod?>' method="post" enctype="multipart/form-data">
     <div class="container mt-5 pe-5 rounded-3" style="background-color:#e6e0de;">
         <div class="row">
-            <div class="col-4 pt-5 text-center">
+            <div class="col-4 pt-5 text-center border-bottom">
                 <label class="preview-yas">
                     <input type="file" name="userfoto" id="bg-yas" onchange="previewFile(this);" accept="image/*">
                     <?php
@@ -14,11 +14,22 @@ $value = $busca->fetch_object();
                     echo "<img id='previewImg' src='$perfil' alt='mdo' width='180' height='180' class='rounded-circle '>"
                     ?>
                 </label>
+                <div class="row">
+                    <div class="col mt-5 text-uppercase text-start">
+                        <ul class="list-unstyled ps-5">
+                            <ul>
+                                <li><a class="link-dark" href="#infoP">Infomaçãos Pessoais</a></li>
+                                <li><a class="link-dark" href="#cont">Contatos</a></li>
+                                <li><a class="link-dark" href="#redeS">Redes Sociais</a></li>
+                            </ul>
+                        </ul>
+                    </div>
 
+                </div>
             </div>
             <div class="col-8 mt-4 ">
                 <div class="container-fluid my-4 border-bottom border-dark border-1">
-                    <h5>INFORMAÇÕES PESSOAIS</h5>
+                    <h5 id="infoP">INFORMAÇÕES PESSOAIS</h5>
                 </div>
                 <div class="row">
                     <div class="col-6">
@@ -38,9 +49,9 @@ $value = $busca->fetch_object();
                     <label for="ocupacao">Ocupação</label><input class="form-control shadow " type="text"
                         name="ocupacao" id="ocupacao" value="<?php echo $value->user_carreira ?>">
                 </div>
-                <div class="col">
-                    <label for="descricao">Descrição</label><textarea class="form-control shadow " name="descricao" id="descricao"
-                        style="height: 200px"><?php echo $value->user_desc ?></textarea>
+                <div class="col" id="cont">
+                    <label for="descricao">Descrição</label><textarea class="form-control shadow " name="descricao"
+                        id="descricao" style="height: 200px"><?php echo $value->user_desc ?></textarea>
                 </div>
                 <div class="container-fluid my-4 border-bottom border-dark border-1">
                     <h5>CONTATOS</h5>
@@ -53,7 +64,7 @@ $value = $busca->fetch_object();
                             id="phone" name="phone" placeholder="DD12345-6789" maxlength="11"
                             value="<?php echo $value->user_telefone_cont ?>">
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" id="redeS">
                         <label for="phone">WhatsApp</label><input class="form-control shadow" type="tel" id="whatsapp"
                             name="whatsapp" placeholder="DD12345-6789" maxlength="11"
                             value="<?php echo $value->user_whatsapp_cont ?>">
@@ -78,14 +89,14 @@ $value = $busca->fetch_object();
                 </div>
             </div>
             <div class="container my-5 text-end">
-            <button type="reset" class="btn btn-primary shadow me-3">Cancelar</button>
-            <button type="submit" class="btn btn-success shadow ">Enviar</button>
-        </div>
+                <button type="reset" class="btn btn-primary shadow me-3">Cancelar</button>
+                <button type="submit" class="btn btn-success shadow ">Enviar</button>
+            </div>
         </div>
     </div>
-    
 
-  
+
+
 </form>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="layout/js/script.js"></script>
