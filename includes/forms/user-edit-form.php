@@ -7,7 +7,7 @@ require_once "includes/header.php";
 <form action='user-edit.php?cod=<?php echo $cod?>' method="post" enctype="multipart/form-data">
     <div class="container mt-5 pe-5 rounded-3" style="background-color:#e6e0de;">
         <div class="row">
-            <div class="col-4 pt-5 text-center border-bottom">
+            <div class="col-4 pt-5 text-center ">
                 <label class="preview-yas">
                     <input type="file" name="userfoto" id="bg-yas" onchange="previewFile(this);" accept="image/*">
                     <?php
@@ -15,22 +15,27 @@ require_once "includes/header.php";
                     echo "<img id='previewImg' src='$perfil' alt='mdo' width='180' height='180' class='rounded-circle '>"
                     ?>
                 </label>
-                <div class="row">
-                    <div class="col mt-5 text-uppercase text-start">
-                        <ul class="list-unstyled ps-5">
-                            <ul>
-                                <li><a class="link-dark" href="#infoP">Infomaçãos Pessoais</a></li>
-                                <li><a class="link-dark" href="#cont">Contatos</a></li>
-                                <li><a class="link-dark" href="#redeS">Redes Sociais</a></li>
-                            </ul>
+                <div class="row mt-4">
+                    <div class="col mx-5 text-uppercase border-bottom border-top border-dark ">
+                        <ul class="list-unstyled mt-3 text-start">
+                                <li><a class="link-dark" href="#infoP"><i class="bi bi-person-badge"></i> Infomaçãos Pessoais</a></li>
+                                <li><a class="link-dark" href="#cont"><i class="bi bi-megaphone"></i> Contatos</a></li>
+                                <li><a class="link-dark" href="#redeS"><i class="bi bi-globe"></i> Redes Sociais</a></li>
                         </ul>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-3 mx-5 text-uppercase ">
+                        <ul class="list-unstyled text-start">
+                                <li><a class="link-danger" href="user-delete.php"><i class="bi bi-trash"></i><b> Excluir perfil</b></a></li>
 
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="col-8 mt-4 ">
                 <div class="container-fluid my-4 border-bottom border-dark border-1">
-                    <h5 id="infoP">INFORMAÇÕES PESSOAIS</h5>
+                    <h5 id="infoP"><i class="bi bi-person-badge"></i> INFORMAÇÕES PESSOAIS</h5>
                 </div>
                 <div class="row">
                     <div class="col-6">
@@ -55,7 +60,7 @@ require_once "includes/header.php";
                         id="descricao" style="height: 200px"><?php echo $value->user_desc ?></textarea>
                 </div>
                 <div class="container-fluid my-4 border-bottom border-dark border-1">
-                    <h5>CONTATOS</h5>
+                    <h5><i class="bi bi-megaphone"></i> CONTATOS</h5>
                 </div>
                 <div class="col"> <label for="email">Email</label><input class="form-control shadow " type="email"
                         name="cont-email" id="cont-email" maxlength="400" value="<?php echo $value->user_email_cont ?>">
@@ -72,7 +77,7 @@ require_once "includes/header.php";
                     </div>
                 </div>
                 <div class="container-fluid my-4 border-bottom border-dark border-1">
-                    <h5>REDES SOCIAIS</h5>
+                    <h5><i class="bi bi-globe"></i> REDES SOCIAIS</h5>
                 </div>
                 <div class="row">
                     <div class="col"><label for="instagram">Instagram</label><input class="form-control shadow "

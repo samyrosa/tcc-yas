@@ -19,10 +19,10 @@
               $img_perfil= img_perfil($reg->user_foto);
                 echo "<div class='dropdown text-end '>
                 <a href='user-perfil.php' class='d-block link-dark text-decoration-none dropdown-toggle' id='dropdownUser1' data-bs-toggle='dropdown' aria-expanded='false'>
-                  <img src='$img_perfil' alt='mdo' width='32' height='32' class='rounded-circle'>
+                  <img src='$img_perfil' alt='mdo' width='32' height='32' class='rounded-circle Pfoto '>
                 </a>
                 <ul id='dropdown' class='dropdown-menu shadow dropdown-menu-end m-4' aria-labelledby='dropdownUser1'>
-                  <li class='m-2'><a class='dropdown-item-text text-center'><img src='$img_perfil' alt='mdo' width='100' height='100' class='rounded-circle'></a></li>
+                  <li class='m-2'><a class='dropdown-item-text text-center'><img src='$img_perfil' alt='mdo' width='100' height='100' class='rounded-circle Pfoto '></a></li>
                   <li> <span class='dropdown-item-text text-center'><h4 class='name'>$reg->user_first_name $reg->user_last_name </h4></span> </li>
                   <li><span class='dropdown-item-text text-muted text-center email'>$reg->user_email</span></li>
                   <li><hr class='dropdown-divider'></li>

@@ -77,6 +77,16 @@ a.link-dark:hover {
   color: var(--yas_color2);
   font-weight: var(--yas_font_medium);
 }
+a.link-danger {
+  text-decoration: none;
+  color: var(--yas_color2);
+}
+
+a.link-danger:hover {
+  text-decoration: none;
+  color: var(--yas_color3);
+  font-weight: var(--yas_font_medium);
+}
 
 a.nav-link {
   color: var(--yas_color5);
@@ -282,4 +292,9 @@ img.card-img{
 }
 input#edit_yas{
   display: none;
+}
+/* foto perfil */
+
+.Pfoto{
+  object-fit: cover;
 }

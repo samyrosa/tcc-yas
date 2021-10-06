@@ -45,8 +45,8 @@
                         $img_perfil = img_perfil($reg->user_foto);
                         echo "<div class='col-4 text-center pt-4 5'>
                         <div class='row'>
-                            <div class='col-12'>
-                                <img src='$img_perfil' alt='mdo' width='180' height='180' class='rounded-circle '>
+                            <div class=' col-12'>
+                                <img src='$img_perfil' alt='mdo' width='180' height='180' class='rounded-circle Pfoto '>
                             </div>
                         </div>
                         <div class='row'>
