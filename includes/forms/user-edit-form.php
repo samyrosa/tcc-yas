@@ -34,7 +34,7 @@ $value = $busca->fetch_object();
                 <div class="row">
                     <div class="col-6">
                         <label for="nome">Nome</label><input class="form-control shadow " type="text" name="nome"
-                            id="nome" size="30" maxlength="30" value=" <?php echo $value->user_first_name ?>">
+                            id="nome" size="30" maxlength="30" value="<?php echo $value->user_first_name ?>">
                     </div>
                     <div class="col-6">
                         <label for="sobrenome">Sobrenome</label><input class="form-control shadow " type="text"
