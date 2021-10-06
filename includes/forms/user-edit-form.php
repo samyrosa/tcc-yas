@@ -4,6 +4,7 @@ $value = $busca->fetch_object();
 require_once "includes/header.php";
 ?>
 
+
 <form action='user-edit.php?cod=<?php echo $cod?>' method="post" enctype="multipart/form-data">
     <div class="container mt-5 pe-5 rounded-3" style="background-color:#e6e0de;">
         <div class="row">
@@ -18,16 +19,18 @@ require_once "includes/header.php";
                 <div class="row mt-4">
                     <div class="col mx-5 text-uppercase border-bottom border-top border-dark ">
                         <ul class="list-unstyled mt-3 text-start">
-                                <li><a class="link-dark" href="#infoP"><i class="bi bi-person-badge"></i> Infomaçãos Pessoais</a></li>
-                                <li><a class="link-dark" href="#cont"><i class="bi bi-megaphone"></i> Contatos</a></li>
-                                <li><a class="link-dark" href="#redeS"><i class="bi bi-globe"></i> Redes Sociais</a></li>
+                            <li><a class="link-dark" href="#infoP"><i class="bi bi-person-badge"></i> Infomaçãos
+                                    Pessoais</a></li>
+                            <li><a class="link-dark" href="#cont"><i class="bi bi-megaphone"></i> Contatos</a></li>
+                            <li><a class="link-dark" href="#redeS"><i class="bi bi-globe"></i> Redes Sociais</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col mt-3 mx-5 text-uppercase ">
                         <ul class="list-unstyled text-start">
-                                <li><a class="link-danger" href="user-delete.php"><i class="bi bi-trash"></i><b> Excluir perfil</b></a></li>
+                            <li><a class="link-danger" href="user-delete.php"><i class="bi bi-trash"></i><b> Excluir
+                                        perfil</b></a></li>
 
                         </ul>
                     </div>
@@ -95,8 +98,9 @@ require_once "includes/header.php";
                 </div>
             </div>
             <div class="container my-5 text-end">
-                <button type="reset" class="btn btn-primary shadow me-3">Cancelar</button>
-                <button type="submit" class="btn btn-success shadow ">Enviar</button>
+                <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>'" type='reset'
+                    class='btn btn-primary shadow me-3'>Cancelar</btton>
+                    <button type="submit" class="btn btn-success shadow ">Enviar</button>
             </div>
         </div>
     </div>

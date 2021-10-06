@@ -67,7 +67,7 @@
                     while ($reg_user = $busca->fetch_object()) {
                         $perfil = img_perfil($reg_user->user_foto);
                         echo "<div class='card mx-4 yas_radius shadow' style='background-color: var(--yas_color1)'>
-            <img src='$perfil' width='100' height='100' class=' rounded-circle text-center mx-auto mt-3' alt='...'>
+            <img src='$perfil' width='100' height='100' class=' rounded-circle text-center mx-auto mt-3 Pfoto' alt='...'>
             <div class='card-body'>
                 <a href='user-perfil.php?cod=$reg_user->user_id' class='link-dark'>
                     <h5 class='card-title mt-2 mb-0 name text-center'>$reg_user->user_first_name $reg_user->user_last_name</h5>

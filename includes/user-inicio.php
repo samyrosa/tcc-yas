@@ -48,7 +48,7 @@ switch ($ordem) {
                       $data
                       <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
                       <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
-                      <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                      <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle Pfoto'> $reg->user_first_name $reg->user_last_name</span>
                     </div>
                   </div>
                 </div>
