@@ -1,6 +1,7 @@
 <?php
 $busca = $banco->query("select * from user_yas where user_id='$cod'");
 $value = $busca->fetch_object();
+require_once "includes/header.php";
 ?>
 
 <form action='user-edit.php?cod=<?php echo $cod?>' method="post" enctype="multipart/form-data">

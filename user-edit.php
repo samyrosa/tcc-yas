@@ -26,7 +26,6 @@
 
     ?>
     <?php
-    require_once "includes/header.php";
     $cod = $_SESSION['id'] ?? null;
     if (is_logado()) {
         if (!isset($_POST['nome'])) {
@@ -57,9 +56,8 @@
                     $q .= ", user_foto='$new_name'";
             }
             $q .= " where user_id = '$id'";
-            echo "$q";
             if ($banco->query($q)) {
-                echo "$q";
+                header("Location: user-perfil.php?cod=$id");
             }
         }
     } else {
