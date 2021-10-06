@@ -103,8 +103,8 @@ $cond = $_GET['cond'] ?? null;
               echo "
               <div class='card mt-5 border-0'>
               <div class='row '>
-                  <div class='col-md-3 pe-0'>
-                      <img src='$perfil' width='100' height='100' class='img-fluid rounded-circle' alt='...'>
+                  <div class='col-md-3 pe-0 me-2'>
+                      <img src='$perfil' width='100' height='100' class='rounded-circle Pfoto' alt='...'>
                   </div>
                   <div class='col-md-8 ps-0 ms-0'>
                       <div class='card-body'>
@@ -138,7 +138,7 @@ $cond = $_GET['cond'] ?? null;
                         $data
                         <h4 class='titulo'>" . mb_strimwidth("$reg->proj_name", 0, 20, "...") . "</h4>
                         <p class='descri'>" . mb_strimwidth("$reg->proj_desc", 0, 80, "...") . "</p>
-                        <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name $reg->user_last_name</span>
+                        <span class='name'><img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle Pfoto'> $reg->user_first_name $reg->user_last_name</span>
                       </div>
                     </div>
                   </div>

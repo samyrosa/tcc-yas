@@ -77,7 +77,7 @@
                     <h5 class="yas_font_ligth"><?php echo mb_strimwidth("$reg->proj_desc", 0, 160, "...") ?></h5>
                     <h5 class="name mt-3">
                         <a class="link-dark"
-                            href="user-perfil.php?cod=<?php echo $reg->user_id?>"><?php echo "<img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle'> $reg->user_first_name&nbsp$reg->user_last_name"?></a>
+                            href="user-perfil.php?cod=<?php echo $reg->user_id?>"><?php echo "<img src='$perfil' alt='mdo' width='32' height='32' class='rounded-circle Pfoto'> $reg->user_first_name&nbsp$reg->user_last_name"?></a>
                     </h5>
                 </div>
             </div>
