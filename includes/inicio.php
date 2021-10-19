@@ -77,6 +77,7 @@
                         <div class="yas_card border-0 shadow">
                                 <div class="card-img-top p-5 " style=" background-color:var(--yas_color3)">
                                         <i class="bi bi-cash-coin yas_icon_index "></i>
+                                        <i class="bi bi-cash-coin yas_icon_index "></i>
                                 </div>
                                 <div class="card-body">
                                         <p class="card-text yas_font_bold mb-3">CONTRATAÇÃO</p>
