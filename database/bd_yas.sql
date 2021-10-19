@@ -39,7 +39,8 @@ create table projeto(
     proj_name varchar(100) not null,
     proj_desc mediumtext not null,
     proj_back_img varchar(60) not null,
-    foreign key(user_id) references user_yas(user_id),
+    proj_data datetime DEFAULT NULL,
+    foreign key(user_id) references user_yas(user_id) on delete cascade,
     foreign key(tag_id) references tag_proj(tag_id)
 )engine=InnoDB default charset=utf8;
 
@@ -49,7 +50,7 @@ create table img_proj(
     img_id int not null primary key auto_increment,
     proj_id int not null,
     proj_img varchar(45) not null,
-    foreign key(proj_id) references projeto(proj_id)
+    foreign key(proj_id) references projeto(proj_id) on delete cascade
 )engine=InnoDB default charset=utf8;
 
 -- select * from img_proj;
@@ -153,3 +154,5 @@ insert into tag_proj (tag_name) values
 -- select projeto.proj_id, user.user_first_name, user.user_last_name, projeto.proj_name, projeto.proj_desc from projeto projeto join user_info user on projeto.user_id=user.user_id;
 -- select projeto.proj_id, user.user_first_name, user.user_last_name, projeto.proj_name, projeto.proj_desc from projeto projeto join user_info user on projeto.user_id=user.user_id where projeto.proj_id=2;
 -- select projeto.proj_id, user.user_first_name, user.user_last_name, projeto.proj_name, projeto.proj_desc, tag.tag_name from projeto projeto join user_info user on projeto.user_id=user.user_id join tag_proj tag on projeto.tag_id=tag.tag_id;
+
+delete from user_yas where user_id='1';

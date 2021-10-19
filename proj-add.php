@@ -47,7 +47,7 @@
           $new_name = "YAS-" . date("Y.m.d-H.i.s.") . $ext; //Definindo um novo nome para o arquivo
           $dir = 'upload/img-proj-bg/'; //Diretório para uploads
           move_uploaded_file($_FILES['bg_projet']['tmp_name'], $dir . $new_name); //Fazer upload do arquivo
-          $sql = "insert into projeto(proj_id, user_id, tag_id, proj_name, proj_desc, proj_back_img, proj_data) values('$id', '$user', '$tag', ' $nome', '$desc', '$new_name', '$data')";
+          $sql = "insert into projeto( user_id, tag_id, proj_name, proj_desc, proj_back_img, proj_data) values('$user', '$tag', ' $nome', '$desc', '$new_name', '$data')";
           if ($banco->query($sql)) {
             $id = $banco->insert_id;
             echo msg_sucesso("Parabéns...", "$nome, foi criado com sucesso", "Dar uma olhada", "index.php");
