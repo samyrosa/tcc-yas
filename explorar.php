@@ -42,11 +42,11 @@
                 </a>
             </div>
             <div class="col mx-2 text-center">
-                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Arte digital</button>
-                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Arte urbana</button>
-                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Design de moda</button>
-                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Design gráfico</button>
-                <button type='button' onclick="window.location.href = 'tag.php?cod=16'" class='btn btn-primary btn-lg me-2 shadow '>Fotografia de beleza</button>
+                <button type='button' onclick="window.location.href = 'explorar-tag.php?cod=3'" class='btn btn-primary btn-lg me-2 shadow '>Arte digital</button>
+                <button type='button' onclick="window.location.href = 'explorar-tag.php?cod=6'" class='btn btn-primary btn-lg me-2 shadow '>Arte urbana</button>
+                <button type='button' onclick="window.location.href = 'explorar-tag.php?cod=15'" class='btn btn-primary btn-lg me-2 shadow '>Design de moda</button>
+                <button type='button' onclick="window.location.href = 'explorar-tag.php?cod=18'" class='btn btn-primary btn-lg me-2 shadow '>Design gráfico</button>
+                <button type='button' onclick="window.location.href = 'explorar-tag.php?cod=37'" class='btn btn-primary btn-lg me-2 shadow '>Fotografia de beleza</button>
             </div>
         </div>
     </div>
