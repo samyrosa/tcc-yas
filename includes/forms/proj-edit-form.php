@@ -20,7 +20,7 @@ $value = $busca->fetch_object();
                     name="nomeProj" id="nomeProj" size="30" maxlength="30" value=" <?php echo $value->proj_name?>">
                 <label for="desc">Descrição</label><textarea class="form-control shadow " id="desc"
                     style="height: 100px" name="desc"><?php echo $value->proj_desc ?></textarea>
-                <label for="tag">Tag</label>
+                <label for="tag" name="tag" id="tag" >Tag</label>
                 <select class="form-select shadow " name="tag" aria-label="Default select example">
                     <?php
                     $q="select tag_id, tag_name from tag_proj";
