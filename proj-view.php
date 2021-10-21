@@ -105,11 +105,17 @@
                     <h5 class="yas_font_ligth text-uppercase">galeria do projeto</h5>
                     <div id="grid">
                         <?php
+                        $f=0;
                         $imgId=$reg->proj_id;
                         $img = $banco->query("SELECT * from img_proj where proj_id='$imgId'");
                         while ($regimg = $img->fetch_object()) {
                             $imgproj=img_proj($regimg->proj_img);
-                            echo"<img class='span-2' src='$imgproj'>";
+                            if($f % 2 == 0){
+                                echo"<img class='span-2' src='$imgproj'>";
+                            }else{
+                                echo"<img src='$imgproj'>";
+                            }
+                            $f++;
                         }
                         ?>
                     </div>
