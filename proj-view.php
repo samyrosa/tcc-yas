@@ -56,7 +56,7 @@
                         
                     ?>
                     <?php
-                    if (is_user()) {
+                    if (!is_user()) { 
                     ?>
                     <button onclick="window.location.href = 'proj-edit.php?cod=<?php echo $reg->proj_id?>'" type='button' class='btn btn-success btn-sm mb-2 '><i
                             class="bi bi-pencil-square"></i>Editar</button>
@@ -93,6 +93,8 @@ else {
   }
   ?>
     </div>
+
+    
     <!--Bootstrap JS -->
     <script src="bootstrap/js/bootstrap.bundle.js"> </script>
 </body>

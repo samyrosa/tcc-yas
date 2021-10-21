@@ -24,19 +24,22 @@
   require_once "includes/function/function-msg.php";
   require_once "includes/function/function-img.php";
   require_once "includes/header.php";
+  $cod = $_GET['cod'];
+  $tag = $banco->query("SELECT * FROM `tag_proj` where tag_id=$cod");
+  $reg_tag=$tag->fetch_object()
   ?>
   <div class="container text-center mt-5">
-  <h1>Categoria chave</h1>
+  <h1><?php  echo $reg_tag->tag_name; ?></h1>
   </div>
   <div class="container text-center mt-5">
   <?php 
-  $cod = $_GET['cod'];
+  
   $galeria = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img, user_yas.user_first_name, user_yas.user_id, user_yas.user_last_name, user_yas.user_foto, tag.tag_name, tag.tag_id FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id join tag_proj tag on projeto.tag_id=tag.tag_id WHERE tag.tag_id=$cod");
   if(!$galeria){
     echo msg_erro('Opp..','Falha na busca do banco de dados, por favor tente denovo','Tentar Novamente','index.php');
   }else{
     if($galeria->num_rows>0){
-      echo "<div class='row row-cols-1 row-cols-md-2 g-3 mt-1'>";
+      echo "<div class='row row-cols-1 row-cols-md-3 g-3 mt-1'>";
       while($reg_galeria=$galeria->fetch_object()){
         $bg = bg_proj($reg_galeria->proj_back_img);
         $datatime = new DateTime($reg_galeria->proj_data);
