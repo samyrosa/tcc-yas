@@ -248,8 +248,7 @@
           </a>";
                             }
                         } else {
-                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
-                        }
+                            echo msg_local_avisso("Nenhum registro!!!");                        }
                     }
                     ?>
                 </div>
@@ -282,8 +281,7 @@
           </a>";
                             }
                         } else {
-                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
-                        }
+                            echo msg_local_avisso("Nenhum registro!!!");                        }
                     }
                     ?>
                 </div>
@@ -316,8 +314,8 @@
           </a>";
                             }
                         } else {
-                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
-                        }
+                            echo msg_local_avisso("Nenhum registro!!!");
+                                                }
                     }
                     ?>
                 </div>
@@ -372,8 +370,7 @@
           </a>";
                             }
                         } else {
-                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
-                        }
+                            echo msg_local_avisso("Nenhum registro!!!");                        }
                     }
                     ?>
                 </div>
@@ -406,8 +403,7 @@
           </a>";
                             }
                         } else {
-                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
-                        }
+                            echo msg_local_avisso("Nenhum registro!!!");                        }
                     }
                     ?>
                 </div>
@@ -440,8 +436,7 @@
           </a>";
                             }
                         } else {
-                            echo msg_erro('Opp..', 'Nenhum registro encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');
-                        }
+                            echo msg_local_avisso("Nenhum registro!!!");                        }
                     }
                     ?>
                 </div>

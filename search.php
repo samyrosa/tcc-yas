@@ -32,15 +32,15 @@ $cond = $_GET['cond'] ?? null;
   if (empty($pesquisa)) {
     header("Location: explorar.php");
   } else {
-    $sql_1 = "SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img, user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira, user_yas.user_id FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id ";
+    $sql_1 = "SELECT ";
     $sql_2 = "SELECT tag_id,tag_name FROM tag_proj where tag_name like '%$pesquisa%'";
     switch ($cond) {
       case "artista":
-        $sql_1 .= " WHERE user_yas.user_first_name LIKE '%$pesquisa%' OR user_yas.user_last_name LIKE '%$pesquisa%' OR user_yas.user_carreira LIKE '%$pesquisa%'";
+        $sql_1 .= "* from user_yas WHERE user_first_name LIKE '%$pesquisa%' OR user_last_name LIKE '%$pesquisa%' OR user_carreira LIKE '%$pesquisa%'";
 
         break;
       default:
-        $sql_1 .= " WHERE projeto.proj_name LIKE '%$pesquisa%'";
+        $sql_1 .= "projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img, user_yas.user_first_name, user_yas.user_last_name, user_yas.user_foto, user_yas.user_carreira, user_yas.user_id FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id  WHERE projeto.proj_name LIKE '%$pesquisa%'";
     }
   }
   ?>
