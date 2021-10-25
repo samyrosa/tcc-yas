@@ -78,7 +78,8 @@
 
                             ?>
                                 <?php
-                                if (!is_user()) {
+
+                                if (is_user($reg->user_id)) {
                                 ?>
                                     <button onclick="window.location.href = 'proj-edit.php?cod=<?php echo $reg->proj_id ?>'" type='button' class='btn btn-success btn-sm mb-2 '><i class="bi bi-pencil-square"></i>Editar</button>
                                 <?php
@@ -102,7 +103,7 @@
                     </div>
                 </div>
                 <div class="container mt-5">
-                    <h5 class="yas_font_ligth text-uppercase">galeria do projeto</h5>
+                    <h5 class="yas_font_ligth text-uppercase">galeria</h5>
                     <div id="grid">
                         <?php
                         $f=0;

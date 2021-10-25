@@ -52,7 +52,7 @@
                         <div class='row'>
                             <div class='col-12 mt-3 text-center'>";
                         if(is_logado()){
-                        if (is_user()) {
+                        if (is_user($cod)) {
             ?>
                             <button onclick="window.location.href = 'user-edit.php?cod=<?php echo $cod; ?>'" type='button' class='btn btn-success btn-sm '><i class="bi bi-pencil-square"></i></button>
 
@@ -95,7 +95,7 @@
                             <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>&mod=mim'" type='button' class='btn btn-primary btn-sm me-2 px-2'><i class="bi bi-card-text"></i>
                                 Sobre Mim</button>
                             <?php
-                            if (is_user()) {
+                            if (is_user($cod)) {
                             ?>
                                 <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>&mod=salvos'" type='button' class='btn btn-primary btn-sm me-2 px-2'><i class="bi bi-star-fill"></i></button>
                                 <button onclick="window.location.href = 'user-perfil.php?cod=<?php echo $cod; ?>&mod=insp'" type='button' class='btn btn-primary btn-sm me-2 px-2'><i class="bi bi-bookmark-fill"></i></button>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="col-3 text-end">
                             <?php
-                            if (is_user()) {
+                            if (is_user($cod)) {
                             ?>
                                 <button onclick="window.location.href = 'proj-add.php'" type='button' class='btn btn-success btn-sm px-3'><i class="bi bi-plus-circle"></i> Projetos </button>
                             <?php } ?>
