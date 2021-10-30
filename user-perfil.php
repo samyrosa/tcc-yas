@@ -59,7 +59,7 @@
                         <?php
                         } else {
                         ?>
-                            <button onclick="window.location.href = 'user-insp.php?salvo_id=<?php echo $cod ?>'" type='button' class='btn btn-success btn-sm '>
+                            <button onclick="window.location.href = 'user-insp.php?salvoId=<?php echo $cod; ?>'" type='button' class='btn btn-success btn-sm '>
                                 <i class="bi bi-bookmark"></i>
                             </button>
                         <?php
