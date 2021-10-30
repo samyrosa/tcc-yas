@@ -33,7 +33,7 @@
      }else{
          if($busca->num_rows>0){
             if($banco->query("delete from user_yas where user_id='$cod'")){
-              die();
+              logout();
               header("Location: index.php");
             }else{
               echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');

@@ -5,6 +5,7 @@
     if(!isset($_SESSION['id'])){
         $_SESSION['id']="";
         $_SESSION['email']="";
+        $_SESSION['tipo']="";
     }
 
     function logout(){
@@ -29,5 +30,14 @@
             return false;
         }
     }
+
+    function is_adimin(){
+        if($_SESSION['tipo'] == 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
 
 ?>

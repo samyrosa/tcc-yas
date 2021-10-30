@@ -18,7 +18,8 @@ create table user_yas(
     social_url mediumtext null,
     social_insta varchar(20) null,
     social_twitter varchar(20) null,
-    user_foto varchar(70) default null
+    user_foto varchar(70) default null,
+    tipo BIT NOT NULL DEFAULT 0
 )engine=InnoDB default charset=utf8;
 
 -- select * from user;
@@ -155,4 +156,4 @@ insert into tag_proj (tag_name) values
 -- select projeto.proj_id, user.user_first_name, user.user_last_name, projeto.proj_name, projeto.proj_desc from projeto projeto join user_info user on projeto.user_id=user.user_id where projeto.proj_id=2;
 -- select projeto.proj_id, user.user_first_name, user.user_last_name, projeto.proj_name, projeto.proj_desc, tag.tag_name from projeto projeto join user_info user on projeto.user_id=user.user_id join tag_proj tag on projeto.tag_id=tag.tag_id;
 
-delete from user_yas where user_id='1';
+-- delete from user_yas where user_id='1';

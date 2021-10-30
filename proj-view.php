@@ -126,9 +126,15 @@
                 echo msg_local_avisso("Nenhum registro!!!");
             }
         }
+        if(is_adimin()){
+            echo "delete proj";
+        }
         ?>
+        
     </div>
 
+    <?php         require "includes/footer.php"
+ ?>
 
     <!--Bootstrap JS -->
     <script src="bootstrap/js/bootstrap.bundle.js"> </script>

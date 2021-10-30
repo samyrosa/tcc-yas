@@ -34,7 +34,7 @@
     } else {
       $email = $_POST['email'];
       $senha = $_POST['senha'];
-      $sql = "SELECT user_id, user_email, user_senha from user_yas where user_email='$email' limit 1";
+      $sql = "SELECT user_id, user_email, user_senha, tipo from user_yas where user_email='$email' limit 1";
       $busca = $banco->query("$sql");
       if (!$busca) {
         echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'user-login.php');
@@ -45,6 +45,7 @@
           if (testar_hash($senha, $reg->user_senha)) {
             $_SESSION['email'] = $reg->user_email;
             $_SESSION['id'] = $reg->user_id;
+            $_SESSION['tipo'] = $reg->tipo;
             header("Location: index.php");
           } else {
             echo msg_erro("Senha Inválida", "Por favor, insira a senha corretamente. ", "Tentar Novamente", "user-login.php");
