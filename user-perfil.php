@@ -50,21 +50,39 @@
                             </div>
                         </div>
                         <div class='row'>
-                            <div class='col-12 mt-3 text-center'>";
-                        if(is_logado()){
-                        if (is_user($cod)) {
+                            <div class='col-12 my-3 text-center'>";
+                        if (is_logado()) {
+                            if (is_user($cod)) {
             ?>
-                            <button onclick="window.location.href = 'user-edit.php?cod=<?php echo $cod; ?>'" type='button' class='btn btn-success btn-sm '><i class="bi bi-pencil-square"></i></button>
+                                <button onclick="window.location.href = 'user-edit.php?cod=<?php echo $cod; ?>'" type='button' class='btn btn-success btn-sm '><i class="bi bi-pencil-square"></i> Editar</button>
 
+                            <?php
+                            } else {
+                                $logadocod = $_SESSION['id'] ?? 0;
+                                $buscaInsp = $banco->query("SELECT * from user_insp WHERE  user_save_id='$cod' and user_id='$logadocod'");
+
+                                if (!is_logado()) {
+                                    echo msg_erro('Opp..', 'Você precisa estar logado, tente novamente ou se <b><a href="cadastro.php">CADASTRE-SE</a></b>', 'Tentar Novamente', 'index.php');
+                                } else {
+                                    if ($buscaInsp->num_rows > 0) {
+                                        ?>
+                                        <button onclick="window.location.href = 'user-insp.php?salvoId=<?php echo $cod; ?>'" type='button' class='btn btn-primary btn-sm '>
+                                    <i class="bi bi-bookmark-fill"></i> Seguindo
+                                </button>
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <button onclick="window.location.href = 'user-insp.php?salvoId=<?php echo $cod; ?>'" type='button' class='btn btn-success btn-sm '>
+                                    <i class="bi bi-bookmark"></i> Seguir
+                                </button>
+                                        <?php
+                                    }
+                                }
+                            ?>
+                                
                         <?php
-                        } else {
-                        ?>
-                            <button onclick="window.location.href = 'user-insp.php?salvoId=<?php echo $cod; ?>'" type='button' class='btn btn-success btn-sm '>
-                                <i class="bi bi-bookmark"></i>
-                            </button>
-                        <?php
+                            }
                         }
-                    }
                         ?>
             <?php
                         echo "</div>
