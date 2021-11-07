@@ -84,9 +84,25 @@
                                     <button onclick="window.location.href = 'proj-edit.php?cod=<?php echo $reg->proj_id ?>'" type='button' class='btn btn-success btn-sm mb-2 '><i class="bi bi-pencil-square"></i>Editar</button>
                                 <?php
                                 } else {
-                                ?>
-                                    <button onclick="window.location.href = '#'" type='button' class='btn btn-primary btn-sm mb-2'><i class="bi bi-star"></i> Salvar</button>
-                                <?php
+                                    $logadocod = $_SESSION['id'] ?? 0;
+                                    $buscaSalvo = $banco->query("SELECT * from salvo_proj WHERE  proj_id='$cod' and user_id='$logadocod'");
+                                    if (!is_logado()) {
+                                        echo msg_erro('Opp..', 'Você precisa estar logado, tente novamente ou se <b><a href="cadastro.php">CADASTRE-SE</a></b>', 'Tentar Novamente', 'index.php');
+                                    } else {
+                                        if ($buscaSalvo->num_rows > 0) {
+                                            ?>
+                                            <button onclick="window.location.href = 'proj-save.php?Scod=<?php echo $cod; ?>'" type='button' class='btn btn-primary btn-sm '>
+                                        <i class="bi bi-star-fill"></i> Salvo
+                                    </button>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <button onclick="window.location.href = 'proj-save.php?Scod=<?php echo $cod; ?>'" type='button' class='btn btn-success btn-sm '>
+                                        <i class="bi bi-star"></i> salvar
+                                    </button>
+                                            <?php
+                                        }
+                                    } 
                                 }
                                 ?>
                             <?php

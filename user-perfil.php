@@ -136,6 +136,7 @@
                         require "includes/user-perfil-mim.php";
                         break;
                     case "salvos":
+                        require "includes/user-perfil-salvo.php";
                         break;
                     case "insp":
                         require "includes/user-perfil-insp.php";
