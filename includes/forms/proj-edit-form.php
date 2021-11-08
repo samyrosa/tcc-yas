@@ -74,6 +74,7 @@ $value = $busca->fetch_object();
         <button type="reset" class="btn btn-primary shadow me-3">Cancelar</button>
         <button type="submit" class="btn btn-success shadow ">Enviar</button>
     </div>
+
 </form>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="layout/js/script.js"></script>
