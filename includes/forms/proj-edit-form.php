@@ -3,18 +3,19 @@ $busca = $banco->query("select * from projeto where proj_id='$cod'");
 $value = $busca->fetch_object();
 ?>
 <style>
-    .radio-image label > input{
-    visibility: hidden;
-}
-.radio-image label > input + img{
-    cursor:pointer;
-    border:4px solid #EEE;
-    border-radius:15px;
-    padding:10px;
-}
-.radio-image label > input:checked + img{
-    border:4px solid #3F51B5;
-}
+    .radio-image label>input {
+        visibility: hidden;
+    }
+
+    .radio-image label>input+img {
+        cursor: pointer;
+        border: 4px solid #EEE;
+        border-radius: 15px;
+    }
+
+    .radio-image label>input:checked+img {
+        border: 4px solid #3F51B5;
+    }
 </style>
 <form action="proj-add.php" method="POST" enctype="multipart/form-data">
     <div class="container mt-5">
@@ -50,27 +51,19 @@ $value = $busca->fetch_object();
         </div>
     </div>
     <div class="container mt-5 radio-image">
-        <div class="row">
-            <div class="col-4">
-                <label for="M">
-                    <input type="checkbox" name="sexo" id="M" value="M">
-                    <img src="layout\image\bg-yas.png" alt="Masculino" height='300' width="480">
-                </label>
-            </div>
-
-            <div class="col-4">
-                <label for="F">
-                    <input type="checkbox" name="sexo" id="F" value="F">
-                    <img src="img/female_black.png" alt="Feminino">
-                </label>
-            </div>
-            <div class="col-4">
-                <label for="F">
-                    <input type="checkbox" name="sexo" id="F" value="F">
-                    <img src="img/female_black.png" alt="Feminino">
-                </label>
-            </div>
-
+        <div class='row row-cols-1 row-cols-md-2 g-3 mt-1'>
+                <div class='col'>
+                    <label for="M">
+                        <input type="checkbox" name="sexo" id="M" value="M">
+                        <img src="layout\image\bg-yas.png" alt="Masculino" height='300' width="480">
+                    </label>
+                </div>
+                <div class='col'>
+                    <label for="3">
+                        <input type="checkbox" name="sexo" id="3" value="3">
+                        <img src="layout\image\bg-yas.png" alt="Masculino" height='300' width="480">
+                    </label>
+                </div>
         </div>
 
     </div>
