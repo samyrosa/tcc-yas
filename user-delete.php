@@ -32,11 +32,11 @@
       echo msg_erro('Opp..', 'Você precisa estar logado, tente novamente ou se <b><a href="cadastro.php">CADASTRE-SE</a></b>','Tentar Novamente', 'index.php');
      }else{
          if($busca->num_rows>0){
-            if($banco->query("delete from user_yas where user_id='$cod'")){
+            if($banco->query("delete from user_yas where user_id=$cod")){
               logout();
               header("Location: index.php");
             }else{
-              echo msg_erro('Opp..', 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
+              echo msg_erro($cod, 'Falha na busca do banco de dados, por favor tente denovo', 'Tentar Novamente', 'index.php');
              }
          }else{
           echo msg_erro('Opp..', 'Nenhum arquivo encontrado, por favor tente denovo', 'Tentar Novamente', 'index.php');

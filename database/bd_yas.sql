@@ -60,7 +60,7 @@ create table salvo_proj(
     salvos_id int not null primary key auto_increment,
     user_id int not null,
     proj_id int not null,
-    foreign key(user_id) references user_yas(user_id),
+    foreign key(user_id) references user_yas(user_id) on delete cascade,
     foreign key(proj_id) references projeto(proj_id)
 )engine=InnoDB default charset=utf8;
 
@@ -70,7 +70,7 @@ create table user_insp(
     insp_id int not null primary key auto_increment,
     user_id int not null,
     user_save_id varchar(45) not null,
-    foreign key(user_id) references user_yas(user_id)
+    foreign key(user_id) references user_yas(user_id) on delete cascade
 )engine=InnoDB default charset=utf8;
 
 -- select * from user_insp;
