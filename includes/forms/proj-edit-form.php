@@ -14,10 +14,13 @@ $value = $busca->fetch_object();
     }
 
     .radio-image label>input:checked+img {
-        border: 4px solid #3F51B5;
+        border: 4px solid #fa8589;
+        
+        filter: blur(2px);
+        -webkit-filter: blur(2);
     }
 </style>
-<form action="proj-add.php" method="POST" enctype="multipart/form-data">
+<form action="proj-edit.php?cod=<?php echo$cod ?>" method="POST" enctype="multipart/form-data">
     <div class="container mt-5">
         <div class="row">
             <div class="col-5">
@@ -51,25 +54,25 @@ $value = $busca->fetch_object();
         </div>
     </div>
     <div class="container mt-5 radio-image">
+    selecione as img para excluir:
         <div class='row row-cols-1 row-cols-md-2 g-3 mt-1'>
-                <div class='col'>
-                    <label for="M">
-                        <input type="checkbox" name="sexo" id="M" value="M">
-                        <img src="layout\image\bg-yas.png" alt="Masculino" height='300' width="480">
-                    </label>
-                </div>
-                <div class='col'>
-                    <label for="3">
-                        <input type="checkbox" name="sexo" id="3" value="3">
-                        <img src="layout\image\bg-yas.png" alt="Masculino" height='300' width="480">
-                    </label>
-                </div>
+            <?php
+            $galeria = $banco->query("select * from img_proj  where proj_id='$cod'");
+            while ($img = $galeria->fetch_object()) {
+                $image = img_proj($img->proj_img);
+                echo "<div class='col'>
+                <label for='$img->img_id'>
+                    <input type='checkbox' name='img[]' id='$img->img_id' value='$img->img_id'>
+                    <img src='$image' alt='$img->img_id' height='300' width='480' class='radio-image '>
+                </label>
+            </div>";
+            }
+            ?>
         </div>
-
+    </div>
+    </div>
     </div>
 
-    </div>
-    </div>
     <div class="container mt-5 text-end">
         <button type="reset" class="btn btn-primary shadow me-3">Cancelar</button>
         <button type="submit" class="btn btn-success shadow ">Enviar</button>
