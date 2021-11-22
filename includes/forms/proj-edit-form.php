@@ -20,6 +20,7 @@ $value = $busca->fetch_object();
         -webkit-filter: blur(2);
     }
 </style>
+<?php require_once "includes/header.php"; ?>
 <form action="proj-edit.php?cod=<?php echo$cod ?>" method="POST" enctype="multipart/form-data">
     <div class="container mt-5">
         <div class="row">
@@ -54,7 +55,7 @@ $value = $busca->fetch_object();
         </div>
     </div>
     <div class="container mt-5 radio-image">
-    selecione as img para excluir:
+    <h5 class="yas_font_ligth text-uppercase">selecione o que deseja excluir:</h5>
         <div class='row row-cols-1 row-cols-md-2 g-3 mt-1'>
             <?php
             $galeria = $banco->query("select * from img_proj  where proj_id='$cod'");
