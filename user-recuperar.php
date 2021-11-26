@@ -38,46 +38,45 @@
   ?>
 
   <?php
-    if (!isset($_POST['email'])) {
-      Forms($valorEnviado);
+  if (!isset($_POST['email'])) {
+    Forms($valorEnviado);
+  } else {
+    $emailValidar = $_POST['email'];
+    echo "<br>";
+    $sql = "SELECT user_email from user_yas where user_email='$emailValidar' limit 1";
+
+    $busca = $banco->query($sql);
+    echo "<br>";
+    if ($busca->num_rows === 0) {
+      return FormsErro($emailValidar);
     } else {
-      $emailValidar = $_POST['email'];
-      echo "<br>";
-      $sql = "SELECT user_email from user_yas where user_email='$emailValidar' limit 1";
 
-      $busca = $banco->query($sql);
-      echo "<br>";
-      if ($busca->num_rows === 0) {
-        return FormsErro($emailValidar);
+      $_SESSION['emailValidar'] = $emailValidar;
+      $cod = md5($emailValidar);
+
+      $mail = new PHPMailer(true);
+
+      $mail->isSMTP();
+      $mail->Host = 'smtp.gmail.com';
+      $mail->SMTPAuth = true;
+      $mail->Username = 'tcc.yas2021etec@gmail.com';
+      $mail->Password = 'tccyas1234';
+      $mail->Port = 587;
+
+      $mail->setFrom('tcc.yas2021etec@gmail.com');
+      $mail->addAddress('tcc.yas2021etec@gmail.com');
+
+      $mail->isHTML(true);
+      $mail->Subject = 'Recupere sua senha YAS';
+      $mail->Body = "<a href='http://localhost/tcc-yas/user-troca-senha.php?cod=$cod'>Clik aqui para redefinir sua senha</a>";
+      $mail->AltBody = 'Chegou o email teste do Canal TI';
+      if ($mail->send()) {
+        return Formssucesso($emailValidar);
       } else {
-
-
-
-        $_SESSION['emailValidar'] = $emailValidar;
-
-        $mail = new PHPMailer(true);
-
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'tcc.yas2021etec@gmail.com';
-        $mail->Password = '';
-        $mail->Port = 587;
-
-        $mail->setFrom('tcc.yas2021etec@gmail.com');
-        $mail->addAddress('tcc.yas2021etec@gmail.com');
-
-        $mail->isHTML(true);
-        $mail->Subject = 'Teste de email via gmail Canal TI';
-        $mail->Body = md5($emailValidar);
-        $mail->AltBody = 'Chegou o email teste do Canal TI';
-        if ($mail->send()) {
-          return Formssucesso($emailValidar);
-        } else {
-          return FormsErro($emailValidar);
-        }
+        return FormsErro($emailValidar);
       }
     }
+  }
   ?>
 
   <?php

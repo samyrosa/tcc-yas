@@ -1,5 +1,5 @@
 <?php
-function Forms($valorEnviado)
+function Forms()
 {
     echo "
     <form action='user-recuperar.php' method='post'>
@@ -59,6 +59,38 @@ function Formssucesso($emailValidar)
                 <div class='row'>
                     <div class='col ms-auto p-3 bd-highligh text-center'>
                         <button type='submit' class='btn btn-primary shadow '>Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+    ";
+}
+function Formstroca($nome, $cod)
+{
+    echo "
+    <form action='user-troca-senha.php?cod=$cod' method='post'>
+        <div class=' yas_box_senha shadow '>
+            <div class='row'>
+            <div class='row'>
+    <h5 class='text-center'>$nome, insera uma nova senha</h5>
+</div>
+            <div class='row'>
+            <div class='col'>
+                <label for='senha'>Senha</label><input class='form-control shadow ' type='password' name='senha1' id='senha'
+                    size='10' maxlength='10'>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col'>
+                <label for='senha'>Cofirme Senha</label><input class='form-control shadow ' type='password' name='senha2' id='senha'
+                    size='10' maxlength='10'>
+            </div>
+        </div>
+                <div class='row'>
+                    <div class='col ms-auto p-3 bd-highligh text-center'>
+                        <button type='submit' class='btn btn-primary shadow '>Enviar</button>
                     </div>
                 </div>
             </div>
