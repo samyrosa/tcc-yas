@@ -60,11 +60,11 @@
       $mail->Host = 'smtp.gmail.com';
       $mail->SMTPAuth = true;
       $mail->Username = 'tcc.yas2021etec@gmail.com';
-      $mail->Password = 'tccyas1234';
+      $mail->Password = '';
       $mail->Port = 587;
 
       $mail->setFrom('tcc.yas2021etec@gmail.com');
-      $mail->addAddress('tcc.yas2021etec@gmail.com');
+      $mail->addAddress($emailValidar);
 
       $mail->isHTML(true);
       $mail->Subject = 'Recupere sua senha YAS';

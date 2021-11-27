@@ -35,8 +35,26 @@
       $reg = $busca->fetch_object();
       $nome = $reg->user_first_name;
       Formstroca($nome, $cod);
+      exit();
     } else {
-          
+      $sql = "SELECT * from user_yas where user_email='$emailValidar'";
+      $busca = $banco->query($sql);
+      $reg = $busca->fetch_object();
+      $id = $reg->user_id;
+      $nome = $reg->user_first_name;
+      $senha1 = $_POST['senha1'] ?? null;
+      $senha2 = $_POST['senha2'] ?? null;
+      if ($senha1 === $senha2) {
+        $senha = criar_hash($senha1);
+        $sql = "update user_yas set user_senha='$senha' where user_id = '$id'";
+        if ($banco->query($sql)) {
+          echo msg_sucesso("Parabéns...", "$nome, agora você é um membro do YAS. <br> Seja bem-vindo(a).", "Entrar", "user-login.php");
+        } else {
+          echo msg_erro("Opss...", "$nome erro no banco na hora de cadastrar.", "Tentar Novamente", "user-cadastro.php");
+        }
+      }else{
+        echo msg_erro("Opps...", "Por favor, insira senhas compatíveis.", "Tentar Novamente", "user-cadastro.php");
+      }
     }
   } else {
     echo 'nao';
