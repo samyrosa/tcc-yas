@@ -15,13 +15,13 @@ $value = $busca->fetch_object();
 
     .radio-image label>input:checked+img {
         border: 4px solid #fa8589;
-        
+
         filter: blur(2px);
         -webkit-filter: blur(2);
     }
 </style>
 <?php require_once "includes/header.php"; ?>
-<form action="proj-edit.php?cod=<?php echo$cod ?>" method="POST" enctype="multipart/form-data">
+<form action="proj-edit.php?cod=<?php echo $cod ?>" method="POST" enctype="multipart/form-data">
     <div class="container mt-5">
         <div class="row">
             <div class="col-5">
@@ -55,7 +55,7 @@ $value = $busca->fetch_object();
         </div>
     </div>
     <div class="container mt-5 radio-image">
-    <h5 class="yas_font_ligth text-uppercase">selecione o que deseja excluir:</h5>
+        <h5 class="yas_font_ligth text-uppercase">selecione o que deseja excluir:</h5>
         <div class='row row-cols-1 row-cols-md-2 g-3 mt-1'>
             <?php
             $galeria = $banco->query("select * from img_proj  where proj_id='$cod'");
@@ -74,6 +74,36 @@ $value = $busca->fetch_object();
     </div>
     </div>
 
+    <div class="container mt-5 text-end">
+        <div class="row">
+            <div class="col mt-3 mx-5 text-uppercase ">
+                <ul class="list-unstyled text-start">
+                    <li><a class="link-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash"></i><b> Excluir
+                                Projeto</b></a></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header yas_msg_erro'>
+                    <h5 class='modal-title' id='exampleModalLabel'> <i class='yas_icon_msg bi bi-x-circle-fill'></i> Excluir Projeto</h5>
+                    <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                </div>
+                <div class='modal-body'>
+                    Tem certeza que deseja exluir um projeto YAS? Fique com ele...
+                </div>
+                <div class='modal-footer'>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+                    <button onclick="window.location.href = 'proj-delete.php?cod=<?php echo $cod; ?>'" type="button" class="btn btn-success">Excluir</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container mt-5 text-end">
         <button type="reset" class="btn btn-primary shadow me-3">Cancelar</button>
         <button type="submit" class="btn btn-success shadow ">Enviar</button>

@@ -60,7 +60,7 @@
       $mail->Host = 'smtp.gmail.com';
       $mail->SMTPAuth = true;
       $mail->Username = 'tcc.yas2021etec@gmail.com';
-      $mail->Password = '';
+      $mail->Password = 'tccyas1234';
       $mail->Port = 587;
 
       $mail->setFrom('tcc.yas2021etec@gmail.com');
