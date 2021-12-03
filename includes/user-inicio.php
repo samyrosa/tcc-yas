@@ -12,12 +12,81 @@ switch ($ordem) {
     $sql .= " order by rand()";
 }
 ?>
+<style>
+   @media only screen and (max-width: 1000px) {
+        #yas_pesquisa{
+            margin-top: 15% !important;
+        }
+    }
+
+    @media only screen and (max-width: 690px) {
+        #yas_pesquisa{
+            margin-top: 20% !important;
+        }
+       
+    }
+
+    @media only screen and (max-width: 500px) {
+         #search{
+          width: 96% !important;
+        } 
+        #yas_icon_pesquisa{
+          opacity: 0;
+        }
+    }
+
+    @media only screen and (max-width: 470px) {
+         #search{
+          width: 90% !important;
+        } 
+      
+    }
+
+    @media only screen and (max-width: 440px) {
+        #yas_pesquisa{
+            margin-top: 30% !important;
+            left: 5%;
+        }
+
+         #search{
+          width: 77% !important;
+        } 
+
+        #filtro{
+          text-align: left;
+          margin-right: 15% !important;
+        }
+      
+    }
+
+    
+    @media only screen and (max-width: 400px) {
+        #yas_pesquisa{
+            margin-top: 30% !important;
+            left: 5%;
+        }
+
+         #search{
+          width: 60% !important;
+        } 
+
+        #filtro{
+          text-align: left;
+          margin-right: 30% !important;
+        }
+      
+    }
+    
+
+   
+
+</style>
 
 <div id="yas_pesquisa" class="container mt-5 yas_search">
   <form method="$_GET" action="search.php">
     <input class="form-control me-2 shadow" id="search" type="search" placeholder="Pesquisa..." aria-label="Search" name="pesquisa">
     <button type="submit" id="yas_lupa"><i id="yas_icon_pesquisa" class="bi bi-search"></i></button>
-    <div class="text-center mt-4">
+    <div id="filtro" class="text-center mt-4">
       <button onclick="window.location.href = 'index.php'" type='button' class='btn btn-primary btn-sm me-4 px-4'>Todos</button>
       <button onclick="window.location.href = 'index.php?ordem=recente'" type='button' class='btn btn-primary btn-sm me-4 px-3'>Recentes</button>
       <button onclick="window.location.href = 'index.php?ordem=antigo'" type='button' class='btn btn-primary btn-sm me-4 px-3'>Antigos</button>
@@ -41,7 +110,7 @@ switch ($ordem) {
         $data = $datatime->format("d / m / y",);
         echo "
               <a href='proj-view.php?cod=$reg->proj_id'>
-                <div class='col'>
+                <div class='col-md-'>
                   <div class='card position-relative'>
                     <img src='$bg' height='250' class='card-img'>
                     <div class='mask position-absolute d-flex flex-column justify-content-end align-items-start w-100 h-100 pb-3 ps-3 pe-1 text-white' style='background: var(--yas_color5_gradient);'>

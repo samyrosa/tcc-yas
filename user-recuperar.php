@@ -43,7 +43,7 @@
   } else {
     $emailValidar = $_POST['email'];
     echo "<br>";
-    $sql = "SELECT user_email from user_yas where user_email='$emailValidar' limit 1";
+    $sql = "SELECT user_email, user_first_name from user_yas where user_email='$emailValidar' limit 1";
 
     $busca = $banco->query($sql);
     echo "<br>";
@@ -53,6 +53,9 @@
 
       $_SESSION['emailValidar'] = $emailValidar;
       $cod = md5($emailValidar);
+
+      $reg = $busca->fetch_object();
+      $nome = $reg->user_first_name;
 
       $mail = new PHPMailer(true);
 
@@ -68,8 +71,73 @@
 
       $mail->isHTML(true);
       $mail->Subject = 'Recupere sua senha YAS';
-      $mail->Body = "<a href='http://localhost/tcc-yas/user-troca-senha.php?cod=$cod'>Clik aqui para redefinir sua senha</a>";
-      $mail->AltBody = 'Chegou o email teste do Canal TI';
+      $mail->Body = "<!DOCTYPE html>
+      <html lang='pt-br'>
+      
+      <head>
+          <meta charset='UTF-8'>
+          <meta name='author' content=''>
+          <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+          <link rel='stylesheet' href=''>
+          <link rel='preconnect' href='https://fonts.googleapis.com'>
+          <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+          <link
+              href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap'
+              rel='stylesheet'>
+      
+          <title>REDEFINIÇÃO DE SENHA</title>
+          <style>
+              .barra {
+                  font-family: 'Montserrat', sans-serif;
+                  padding: 50px;
+                  background-color: #204B3D;
+                  display: grid;
+                  margin: 0;
+                  place-items: center center;
+      
+      
+              }
+      
+              .barra2 {
+                  margin-left: 20px;
+                  font-family: 'Montserrat', sans-serif;
+                  padding: 40px;
+                  width: 800px;
+                  height: 370px;
+                  background-color: #E6E0DE;
+                  border-radius: 30px;
+      
+              }
+              h5{
+                  font-weight: 300;
+                  font-size: 20px;
+              }
+              h1{
+                text-transform: capitalize;
+              }
+          </style>
+      </head>
+      
+      <body>
+          <div class='barra'>
+              <div class='barra2'>
+                  <h1>Olá, $nome!</h1>
+                  <h5>Sua senha do yas pode ser redefinida clicando no botão abaixo. Se você não solicitou uma nova senha,
+                      ignore este e-mail.</h5>
+                  <a class='btn btn-primary' href='http://localhost/tcc-yas/user-troca-senha.php?cod=$cod'
+                      role='button'>Redefinir senha</a>
+      
+              </div>
+          </div>
+      
+      
+      
+      </body>
+      
+      </html>";
+      $mail->AltBody = 'Olá, $nome!
+      Sua senha do yas pode ser redefinida clicando no botão abaixo. Se você não solicitou uma nova senha, ignore este e-mail.
+      http://localhost/tcc-yas/user-troca-senha.php?cod=$cod';
       if ($mail->send()) {
         return Formssucesso($emailValidar);
       } else {

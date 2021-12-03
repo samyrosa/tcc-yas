@@ -1,21 +1,200 @@
-<div class="yas_header mb-5"> 
-        <svg width="auto" height="auto" id="yas_wave"  viewBox="0 0 1458 557" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+<style>
+        @media only screen and (max-width: 1300px) {
+
+                /* For mobile phones: */
+                #verde {
+                        background-color: var(--yas_color4);
+                        width: 100%;
+                        height: 100px;
+                }
+
+                #yas_titulo_header {
+                        left: 2%;
+                        right: 5%;
+                        top: 25%;
+                }
+
+                .pesquisa {
+                        margin-top: 0%;
+                }
+
+                .yas_img_search {
+                        opacity: 0;
+                }
+        }
+
+        @media only screen and (max-width: 1200px) {
+                #card {
+                        margin-top: 5px !important;
+
+                }
+
+                #card1,
+                #card3 {
+
+                        margin-left: 210px !important;
+                }
+
+                .col-2 {
+                        margin-bottom: 5%;
+                }
+        }
+
+
+        @media only screen and (max-width: 1100px) {
+
+                /* For mobile phones: */
+                #img-inicio {
+                        margin-top: 85px;
+                }
+
+                #yas_titulo_header {
+                        left: 2%;
+                        right: 5%;
+                        top: 22%;
+                }
+
+                .yas_img_search {
+                        opacity: 0;
+                }
+        }
+
+        @media only screen and (max-width: 1070px) 
+        {
+                .yas_box_search {
+                        margin-top: 10% !important;
+                        width: 850px !important;
+                }
+        }
+
+        @media only screen and (max-width: 950px) {
+                #img-inicio {
+                        margin-top: 300px;
+                        right: 50%;
+                }
+
+                #yas_titulo_header {
+                        left: 20%;
+                        right: 20%;
+                        top: 20%;
+                }
+
+                #verde {
+                        background-color: var(--yas_color4);
+                        width: 100%;
+                        height: 300px;
+                }
+                .yas_box_search {
+                        margin-top: 20% !important;
+                }
+
+                #card {
+                        margin-top: 5px !important;
+                }
+
+                #card1, #card3 {
+
+                        margin-left: 150px !important;
+                }
+
+                .col-2 {
+                        margin-bottom: 5%;
+                }
+        }
+
+        @media only screen and (max-width: 770px) {
+
+                #verde {
+
+                        width: 100%;
+                        height: 380px;
+                }
+
+                #yas_titulo_header {
+                        left: 11%;
+                        right: 5%;
+                        top: 22%;
+                }
+
+                #img-inicio {
+                        margin-top: 400px;
+                }
+
+                .yas_box_search {
+                        margin-top: 30% !important;
+                        width: 950px !important;
+                }
+
+                #seach{
+                        width: 500px; ;
+                }
+
+                #card1,
+                #card3 {
+                        margin-left: 50px !important;
+                        margin-right: 20% !important;
+                }
+        }
+
+        @media only screen and (max-width: 670px) {
+
+                .yas_box_search {
+                        margin-top: 30% !important;
+                        width: 500px !important;
+                }
+        }
+
+        @media only screen and (max-width: 540px) {
+
+                .yas_box_search {
+                        margin-top: 40% !important;
+                        width: 400px !important;
+                }
+
+                #titulo {
+                        font-size: 50px;
+                }
+
+                #card1,
+                #card3 {
+                        margin-left: 40% !important;
+                        width: 100%;
+                }
+        }
+        @media only screen and (max-width: 430px) 
+        {
+                .yas_box_search {
+                        left: 15% !important;
+                        margin-top: 80% !important;
+                        width: 300px !important;
+                }
+        
+                #titulo {
+                        font-size: 40px;
+                }
+        }
+</style>
+
+
+<div class="yas_header mb-5">
+        <div id="verde"></div>
+        <svg width="auto" height="auto" id="yas_wave" viewBox="0 0 1458 557" fill="none"
+                xmlns="http://www.w3.org/2000/svg" class="msvg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M1457.59 0H0V265.695V282.768V464.07C379.868 640.789 599.403 510.433 785.416 399.982C992.636 276.938 1158.26 178.597 1457.59 557V282.768V265.695V0Z"
                         fill="#204B3D" />
         </svg>
-        <div id="yas_titulo_header" class="text-center">
-                <h1 class=" yas_color1 yas_font_bold mt-2">
+        <div id="yas_titulo_header" class="text-center titulo-cabeca">
+                <h1 class=" yas_color1 yas_font_bold mt-2 teste ">
                         <yas_font_big>EXPLORE O</yas_font_big> MUNDO DA ARTE
                 </h1>
                 <button onclick="window.location.href = 'user-cadastro.php'" type='button'
                         class='btn btn-primary mt-2'>&nbsp&nbsp&nbspCadastre-se&nbsp&nbsp&nbsp</button></li>
                 <p class=" mt-2"><a href="user-login.php" class="link-light">Já tenho conta</a></p>
         </div>
-        <div id="yas_galeria_header" class="text-center">
-                <svg width="543" height="452" viewBox="0 0 543 452" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <div id="yas_galeria_header" class="text-center img-fluid">
+                <svg id="img-inicio" width="543" height="452" viewBox="0 0 543 452" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <path d="M168.124 0.318359H411.57V243.765H168.124V0.318359Z" fill="url(#pattern0)" />
                         <path d="M299.373 56.417H542.82V299.864H299.373V56.417Z" fill="url(#pattern1)" />
                         <path d="M0.886108 105.106H244.333V347.495H0.886108V105.106Z" fill="url(#pattern2)" />
@@ -50,10 +229,10 @@
         </div>
 </div>
 <br><br>
-<div class="">
+<div class="pesquisa">
         <div class="container yas_box_search shadow p-5 mt-5">
                 <h2 class="yas_font_bold ">
-                        <yas_font_medium>DESCUBRA E SE ENCANTE!</yas_font_medium>
+                        <yas_font_medium id="titulo">DESCUBRA E SE ENCANTE!</yas_font_medium>
                 </h2>
                 <h2 class="yas_font_ligth">O QUE DESEJA ENCONTRAR?</h2>
                 <div id="yas_pesquisa" class=" yas_search mt-3">
@@ -70,10 +249,10 @@
 <br><br>
 <br><br>
 <br>
-<div class="container mt-5 mb-5">
+<div id="card" class="container mt-5 mb-5">
         <h2 class="m-5 text-center yas_font_bold">OS QUATRO PILARES DO YOUR ART SAVE</h2>
         <div class="row">
-                <div class="col-2 mx-5 ">
+                <div id="card1" class="col-2 mx-5 ">
                         <div class="yas_card border-0 shadow">
                                 <div class="card-img-top p-5 " style=" background-color:var(--yas_color3)">
                                         <i class="bi bi-cash-coin yas_icon_index "></i>
@@ -84,7 +263,7 @@
                         </div>
                 </div>
                 <div class="col-2 mx-5">
-                        <div class="yas_card shadow border-0">
+                        <div id="card2" class="yas_card shadow border-0">
                                 <div class="card-img-top p-5 " style=" background-color:var(--yas_color2)">
                                         <i class="bi bi-palette yas_icon_index  "></i>
                                 </div>
@@ -93,7 +272,7 @@
                                 </div>
                         </div>
                 </div>
-                <div class="col-2 mx-5">
+                <div id="card3" class="col-2 mx-5">
                         <div class="yas_card shadow border-0">
                                 <div class="card-img-top p-5" style=" background-color:var(--yas_color1)">
                                         <i class="bi bi-ui-checks-grid yas_icon_index"></i>
@@ -104,7 +283,7 @@
                         </div>
                 </div>
                 <div class="col-2 ms-5">
-                        <div class="yas_card shadow border-0">
+                        <div id="card4" class="yas_card shadow border-0">
                                 <div class="card-img-top p-5" style=" background-color:var(--yas_color6)">
                                         <i class="bi bi-megaphone yas_icon_index"></i>
                                 </div>

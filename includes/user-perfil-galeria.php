@@ -1,6 +1,5 @@
 
 <div class="col-12">
-    
     <?php
       $galeria = $banco->query("SELECT projeto.proj_data, projeto.proj_id, projeto.proj_name, projeto.proj_desc, projeto.proj_back_img, user_yas.user_first_name, user_yas.user_id, user_yas.user_last_name, user_yas.user_foto FROM projeto projeto join user_yas user_yas on projeto.user_id=user_yas.user_id  WHERE user_yas.user_id= $cod");
       if(!$galeria){

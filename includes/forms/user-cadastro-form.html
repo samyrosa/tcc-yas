@@ -1,17 +1,50 @@
+<style>
+     @media only screen and (max-width: 1290px) {
+        #boxCadastro{
+            left: 24% !important;
+        }
+     }
+
+     @media only screen and (max-width: 950px) {
+        #boxCadastro{
+            left: 25% !important;
+            width: 50%;
+        }
+     }
+     @media only screen and (max-width: 890px) {
+        #boxCadastro{
+            width: 70%;
+            left: 15% !important;
+        }
+
+    }
+
+        @media only screen and (max-width: 650px) {
+        #boxCadastro{
+            width: 75%;
+            left: 15% !important;
+        }
+
+    }
+    
+    
+
+</style>
+
 <form action='user-cadastro.php' method="post">
-    <div class=" yas_box_reg shadow ">
+    <div id="boxCadastro" class=" yas_box_reg shadow ">
         <div class="row">
-            <div class="col p-3">
+            <div id="label" class="col p-3">
                 <div class="row">
                     <h1 class="text-center">CRIE SUA CONTA</h1>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md-6">
                         <label for="nome">Nome</label><input class="form-control shadow " type="text" name="nome"
                             id="nome" size="30" maxlength="30">
                     </div>
-                    <div class="col">
-                        <label for="sobrenome">Sobrenome</label><input class="form-control shadow " type="text"
+                    <div class="col-md-6">
+                        <label for="sobrenome">Sobrenome</label><input class="form-control shadow mytext" type="text"
                             name="sobrenome" id="sobrenome" size="30" maxlength="30">
                     </div>
                 </div>
@@ -22,11 +55,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
+                    <div id="teste" class="col-md-6">
                         <label for="senha1">Senha</label><input class="form-control shadow " type="password"
                             name="senha1" id="senha1" size="10" maxlength="10">
                     </div>
-                    <div class="col">
+                    <div id="senha"class="col-md-6">
                         <label for="senha2">Confirmar Senha</label><input class="form-control shadow " type="password"
                             name="senha2" id="senha2" size="10" maxlength="10">
                     </div>
