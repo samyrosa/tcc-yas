@@ -10,7 +10,7 @@
         </svg>
         <br>
         <br>
-        <h5>Your Save Art - 2021</h5>
+        <h5>Your Art Save - 2021</h5>
         <p>Leticia Xavier | Lorena Guardia | Samuel Rosales | Thais Oliveira</p>
     </div>
 </footer>

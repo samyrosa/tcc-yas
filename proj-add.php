@@ -69,7 +69,6 @@
   } else {
     echo msg_erro("Ops...", "Você não pode acessar essa página.<br> Por favor efetue seu <u><b><a class='link-dark' href='user-login.php'>login</a></u></b> ou <u><b><a class='link-dark' href='user-cadastro.php'>cadastre-se</a></u></b> para publicar novas projetos . ", "Voltar a explorar", "index.php");
   }
-  require "includes/footer.php"
   ?>
 
   <!--Bootstrap JS -->

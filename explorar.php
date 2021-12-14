@@ -89,7 +89,7 @@
         <div class="row">
             <div class="col-12">
                 <a href="" class="link-dark">
-                    <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">CATEGORIAS PRINCIPAIS</h5>
+                    <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">NOVOS PROJETOS</h5>
                 </a>
             </div>
         </div>
@@ -213,7 +213,7 @@
         <div class="row">
             <div class="col-12">
                 <a href="" class="link-dark">
-                    <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">CATEGORIAS PRINCIPAIS</h5>
+                    <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">PROJETOS MAIS VITOS</h5>
                 </a>
             </div>
         </div>
@@ -335,7 +335,7 @@
         <div class="row">
             <div class="col-12">
                 <a href="" class="link-dark">
-                    <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">CATEGORIAS PRINCIPAIS</h5>
+                    <h5 class="yas_font_ligth text-uppercase mb-3 ms-2">TALVES VOCÊ CURTA</h5>
                 </a>
             </div>
         </div>

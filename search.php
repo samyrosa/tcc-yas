@@ -79,7 +79,7 @@ $cond = $_GET['cond'] ?? null;
             <span class='yas_font_bold'>Categorias: </span> &nbsp";
 
             while ($reg = $busca->fetch_object()) {
-              echo "<a href='tag.php?cod=$reg->tag_id' class='link-dark'><u>$reg->tag_name</u></a> &nbsp";
+              echo "<a href='explorar-tag.php?cod=$reg->tag_id' class='link-dark'><u>$reg->tag_name</u></a> &nbsp";
             }
           }
           echo "</p>";
